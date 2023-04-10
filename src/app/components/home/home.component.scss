@@ -91,6 +91,46 @@ section{
         width: 14rem !important;
       }
     }
+    .section3{
+      h1{
+        position: absolute;
+        font-size: 5rem;
+        bottom: 1rem;
+  font-family: 'Dancing Script', cursive !important;
+        color: yellow;
+        z-index: 6;
+        left: 5rem;
+      }
+      h3{
+        font: 2.5rem;
+        line-height: 1.6;
+        // bottom: -7rem;
+        right: 3rem;
+      }
+      .bgImg5{
+        position: absolute;
+        background-image: url(../../../assets/images/aboutusjpg.jpg);
+        background-size: cover ;
+        background-position: center center;
+        background-repeat: no-repeat;
+        left: 5rem;
+        border-radius: 2rem;
+        height: 14rem;
+        width: 20rem !important;
+      }
+      .bgImg6{
+        position: absolute;
+        background-image: url(../../../assets/images/homeImg3.jpg);
+        background-size: cover ;
+        background-position: center center;
+        background-repeat: no-repeat;
+        top: 0rem !important;
+        left: 20rem;
+        border-radius: 50%;
+        height: 14rem;
+        width: 14rem !important;
+      }
+    }
   }
 }
 
