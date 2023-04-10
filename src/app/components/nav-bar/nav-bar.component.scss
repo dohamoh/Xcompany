@@ -1,0 +1,16 @@
+nav{
+  .mainUl{
+    justify-content: space-between;
+    // width: 50% !important;
+    ul{
+      justify-content: end;
+      width: 65% !important;
+      li{
+        a{
+        color: white !important;
+        font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

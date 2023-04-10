@@ -1,0 +1,96 @@
+section{
+  header{
+    .custom-shape {
+      clip-path: url(#custom);
+      z-index: 3;
+      right: 10%;
+      top: 0%;
+    }
+    .mainText{
+      position: absolute;
+        z-index: 5;
+        top: 25%;
+        left: 15%;
+      h1{
+        background-color: rgb(255, 255, 255);
+        border-radius: 5rem;
+        font-size: 3.5rem;
+      }
+      h2{
+        background-color: rgb(238, 255, 0);
+        border-radius: 5rem;
+        font-size: 2.5rem;
+      }
+    }
+  }
+  #homeBody{
+    .section1{
+      .bgImg1{
+        position: absolute;
+        background-image: url(../../../assets/images/homeImage1.png);
+        background-size: cover ;
+        background-position: center center;
+        background-repeat: no-repeat;
+        // background-attachment: fixed;
+        // border: 2px solid red;
+        // border-radius: 50%;
+        height: 14rem;
+        width: 14rem !important;
+      }
+      .bgImg2{
+        // animation: spin 6s linear infinite;
+        background-image: url(../../../assets/images/shape2.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        transform: translate(-50%, -50%);
+        transform-origin: center;
+        // background-attachment: fixed;
+        height: 28rem;
+      }
+      h1{
+        font-size: 3.5rem;
+        top: 0rem;
+        // left: 10rem;
+      }
+      h3{
+        top: 14rem;
+        left: 13rem;
+      }
+    }
+    .section2{
+      h3{
+        font: 2.5rem;
+        line-height: 1.6;
+        bottom: -7rem;
+        left: 3rem;
+      }
+      .bgImg3{
+        position: absolute;
+        background-image: url(../../../assets/images/homeImg3.jpg);
+        background-size: cover ;
+        background-position: center center;
+        background-repeat: no-repeat;
+        right: 5rem;
+        // bottom: 50%;
+        border-radius: 2rem;
+        height: 14rem;
+        width: 20rem !important;
+      }
+      .bgImg4{
+        position: absolute;
+        background-image: url(../../../assets/images/images.jpg);
+        background-size: cover ;
+        background-position: center center;
+        background-repeat: no-repeat;
+        // border: 2px solid red;
+        top: 0rem !important;
+        right: 20rem;
+        border-radius: 50%;
+        height: 14rem;
+        width: 14rem !important;
+      }
+    }
+  }
+}
+
