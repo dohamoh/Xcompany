@@ -1,0 +1,43 @@
+<section>
+  <div class="side-nav">
+    <div class="user d-flex align-items-center justify-content-start">
+      <i class="bi bi-star"></i>
+      <h5>Admin name</h5>
+    </div>
+    <div class=" w-100 h-100">
+
+      <ul>
+        <li>
+          <i (click)="switch(addUser)" class="bi bi-person-fill-add"></i>
+          <p (click)="switch(addUser)" class="tap">Add admin</p>
+        </li>
+        <li>
+          <i (click)="switch(addServ)" class="bi bi-plus-circle-fill"></i>
+          <p (click)="switch(addServ)">Add services</p>
+        </li>
+        <li>
+          <i (click)="switch(add)" class="bi bi-person-fill"></i>
+          <p (click)="switch(add)">kugui</p>
+        </li>
+        <li>
+          <i (click)="switch(dash)" class="bi bi-bar-chart-line-fill"></i>
+          <p (click)="switch(dash)">Dashboard</p>
+        </li>
+      </ul>
+
+    </div>
+    <div class=" logOut">
+      <i class="bi bi-box-arrow-right"></i>
+      <p>logOut</p>
+    </div>
+  </div>
+
+
+
+  <div class="pages text-white">
+    <div class="page " #addUser> <app-addadmin></app-addadmin></div>
+    <div class="page d-none" #addServ> <app-add-services></app-add-services></div>
+    <div class="page d-none" #add>add</div>
+    <div class="page d-none" #dash>dash</div>
+  </div>
+</section>

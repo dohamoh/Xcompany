@@ -12,6 +12,11 @@ import { OurServicesComponent } from './components/our-services/our-services.com
 import { OurClientsComponent } from './components/our-clients/our-clients.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminComponent } from './components/admin/admin.component';
+import { AddadminComponent } from './components/addadmin/addadmin.component';
+import { AddServicesComponent } from './components/add-services/add-services.component';
+import { InputComponent } from './template/input/input.component';
+import { ButtonComponent } from './template/button/button.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     OurServicesComponent,
     OurClientsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    AdminComponent,
+    AddadminComponent,
+    AddServicesComponent,
+    InputComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
