@@ -1,34 +1,38 @@
-section{
-  header{
+section {
+  header {
     .custom-shape {
       clip-path: url(#custom);
       z-index: 3;
       right: 10%;
       top: 0%;
     }
-    .mainText{
+
+    .mainText {
       position: absolute;
-        z-index: 5;
-        top: 25%;
-        left: 15%;
-      h1{
+      z-index: 5;
+      top: 25%;
+      left: 15%;
+
+      h1 {
         background-color: rgb(255, 255, 255);
         border-radius: 5rem;
         font-size: 3.5rem;
       }
-      h2{
+
+      h2 {
         background-color: rgb(238, 255, 0);
         border-radius: 5rem;
         font-size: 2.5rem;
       }
     }
   }
-  #homeBody{
-    .section1{
-      .bgImg1{
-        position: absolute;
+
+  #homeBody {
+    .section1 {
+      .bgImg1 {
+        // position: absolute;
         background-image: url(../../../assets/images/homeImage1.png);
-        background-size: cover ;
+        background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
         // background-attachment: fixed;
@@ -37,7 +41,8 @@ section{
         height: 14rem;
         width: 14rem !important;
       }
-      .bgImg2{
+
+      .bgImg2 {
         // animation: spin 6s linear infinite;
         background-image: url(../../../assets/images/shape2.png);
         background-size: cover;
@@ -48,27 +53,31 @@ section{
         // background-attachment: fixed;
         height: 28rem;
       }
-      h1{
+
+      h1 {
         font-size: 3.5rem;
         top: 0rem;
         // left: 10rem;
       }
-      h3{
+
+      h3 {
         top: 14rem;
         left: 13rem;
       }
     }
-    .section2{
-      h3{
+
+    .section2 {
+      h3 {
         font: 2.5rem;
         line-height: 1.6;
         bottom: -7rem;
         left: 3rem;
       }
-      .bgImg3{
+
+      .bgImg3 {
         position: absolute;
         background-image: url(../../../assets/images/homeImg3.jpg);
-        background-size: cover ;
+        background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
         right: 5rem;
@@ -77,10 +86,11 @@ section{
         height: 14rem;
         width: 20rem !important;
       }
-      .bgImg4{
+
+      .bgImg4 {
         position: absolute;
         background-image: url(../../../assets/images/images.jpg);
-        background-size: cover ;
+        background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
         // border: 2px solid red;
@@ -91,26 +101,32 @@ section{
         width: 14rem !important;
       }
     }
-    .section3{
-      h1{
+
+    .section3 {
+      h1 {
         position: absolute;
-        font-size: 5rem;
-        bottom: 1rem;
-  font-family: 'Dancing Script', cursive !important;
-        color: yellow;
+        font-size: 8rem;
+        letter-spacing: 1rem;
+        color: rgb(255, 255, 255);
         z-index: 6;
+        bottom: -1rem;
         left: 5rem;
       }
-      h3{
-        font: 2.5rem;
+
+      h3 {
+        position: absolute;
+        font-size: 1.3rem;
         line-height: 1.6;
-        // bottom: -7rem;
-        right: 3rem;
+        top: 3rem;
+        right: 0rem;
+        width: 60%;
+        word-spacing: 0.5rem;
       }
-      .bgImg5{
+
+      .bgImg5 {
         position: absolute;
         background-image: url(../../../assets/images/aboutusjpg.jpg);
-        background-size: cover ;
+        background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
         left: 5rem;
@@ -118,19 +134,79 @@ section{
         height: 14rem;
         width: 20rem !important;
       }
-      .bgImg6{
+
+      .bgImg6 {
         position: absolute;
-        background-image: url(../../../assets/images/homeImg3.jpg);
-        background-size: cover ;
+        z-index: 5;
+        background-image: url(../../../assets/images/blob.svg);
+        background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        top: 0rem !important;
-        left: 20rem;
-        border-radius: 50%;
+        top: 2rem !important;
+        left: 16rem;
+        height: 20rem;
+        width: 20rem !important;
+      }
+    }
+
+    .section4 {
+      position: relative;
+
+      h1 {
+        font-size: 5rem;
+        top: 35rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        position: absolute;
+        top: 42rem;
+        line-height: 1.5;
+      }
+
+      span {
+        color: rgb(16, 84, 254);
+          font-family: 'Cairo', sans-serif;
+      }
+
+      .bgImg7 {
+        background-image: url(../../../assets/images/download.jpg);
+        position: absolute;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        top: 40rem;
+        right: 5rem;
+        border-radius: 2rem;
         height: 14rem;
+        width: 20rem !important;
+      }
+
+      .bgImg8 {
+        background-image: url(../../../assets/images/genuine-work-from-home-jobs-uk.jpg);
+        position: absolute;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        top: 52rem;
+        right: 0rem;
+        border-radius: 2rem;
+        height: 10rem;
         width: 14rem !important;
+      }
+
+      .bgImg9 {
+        background-image: url(../../../assets/images/blue-blob.svg);
+        position: absolute;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        top: 48rem;
+        right: 8rem;
+        border-radius: 2rem;
+        height: 20rem;
+        width: 20rem !important;
       }
     }
   }
 }
-
