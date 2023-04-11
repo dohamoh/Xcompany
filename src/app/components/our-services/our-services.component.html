@@ -1,1 +1,18 @@
-<p>our-services works!</p>
+<div class=" container ani">
+  <h1 class=" text-center ">OUR SERVICES</h1>
+  <div class="row">
+    <div class="col-12 row d-flex align-items-center "  *ngFor="let dummy of ' '.repeat(10).split(''), let i = index" [ngClass]="{'flex-row-reverse': i%2!=0}">
+      <div class="col-5 col">
+        <div class="img" style="background-image: url('../../../assets/images/aboutusjpg.jpg');"></div>
+      </div>
+      <div class="col-7 col ">
+        <div class=" bg-white p-3 text-black rounded-3 desc "  [ngClass]=" i%2!=0 ? 'descL':'descR'">
+          <h2>serv Name</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nesciunt suscipit, eos possimus dicta unde
+            repudiandae quaerat qui ratione eveniet repellendus accusamus, officiis deleniti excepturi at, quibusdam
+            molestias ullam id.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

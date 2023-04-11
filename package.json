@@ -21,6 +21,7 @@
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
     "angular-translate": "^2.19.0",
+    "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "aos-animations": "^0.0.7",
     "bootstrap": "^5.2.3",
