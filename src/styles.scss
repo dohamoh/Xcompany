@@ -23,10 +23,23 @@ p,h1,h2,h3,h4,h5,h6{
   // background: linear-gradient(to left top, #00a0e1, #fcd51a);
   background-color: #fcd51a;
 transition: 1s !important;
+color: rgb(0, 0, 0) !important;
 }
 .btn-main:hover{
   background: linear-gradient(to left top, #fcd51a, #00a0e1);
-transition: 1s !important;
+transition: 0.5s !important;
+}
+.main-color2{
+  color: #00a0e1;
+}
+.main-color1{
+  color: #fcd51a;
+}
+.main-BgColor2{
+  color: #00a0e1;
+}
+.main-BgColor1{
+  color: #fcd51a;
 }
 .transition{
   transition: 0.5s;
@@ -40,4 +53,25 @@ box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
 textarea,
 input:focus {
   outline: none !important;
+}
+input{
+  background-color: rgb(255, 255, 255);
+
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(0, 0, 0);
+  opacity: 1; /* Firefox */
+}
+.main-input{
+  background-color: rgb(164, 164, 164);
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(0, 0, 0);
+    opacity: 1; /* Firefox */
+  }
+}
+
+.loading{
+  color: #00a0e1;
+  width: 24px;
+  height: 24px;
 }

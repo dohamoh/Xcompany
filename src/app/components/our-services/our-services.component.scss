@@ -10,6 +10,8 @@ h1 {
   width: 100% !important;
   height: 70vh !important;
   transition: 1s all;
+
+
 }
 .descR {
   opacity: 0;
@@ -37,4 +39,9 @@ h1 {
   opacity: 1;
   animation: slideInLeft;
   animation-duration: 1s;
+}
+.layer{
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+
 }

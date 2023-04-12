@@ -1,1 +1,1 @@
-<button class=" btn rounded-3 btn-main mt-2 ani w-100 text-white"> <p *ngIf="text">{{text}}</p><i *ngIf="!text" class="bi bi-send-fill text-white ani"></i></button>
+<button class=" btn rounded-3 btn-main mt-2 ani w-100 text-white d-flex align-items-center justify-content-center"> <p *ngIf="text" class="me-2">{{text}}</p><i *ngIf="textIcon" [ngClass]="textIcon" class="bi bi-send-fill text-white ani ms-2"></i></button>

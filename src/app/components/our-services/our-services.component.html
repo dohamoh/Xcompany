@@ -1,17 +1,44 @@
 <div class=" container ani">
-  <h1 class=" text-center ">OUR SERVICES</h1>
+  <h1 class=" text-center ">Services That Gets Results !</h1>
   <div class="row">
-    <div class="col-12 row d-flex align-items-center "  *ngFor="let dummy of ' '.repeat(10).split(''), let i = index" [ngClass]="{'flex-row-reverse': i%2!=0}">
+    <div class="col-12 row d-flex align-items-center " *ngFor="let item of allServices let i = index"
+      [ngClass]="{'flex-row-reverse': i%2!=0}">
       <div class="col-5 col">
-        <div class="img" style="background-image: url('../../../assets/images/aboutusjpg.jpg');"></div>
-      </div>
-      <div class="col-7 col ">
-        <div class=" bg-white p-3 text-black rounded-3 desc "  [ngClass]=" i%2!=0 ? 'descL':'descR'">
-          <h2>serv Name</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nesciunt suscipit, eos possimus dicta unde
-            repudiandae quaerat qui ratione eveniet repellendus accusamus, officiis deleniti excepturi at, quibusdam
-            molestias ullam id.</p>
+        <div class="img position-relative overflow-hidden" style="background-image: url({{item.image}});">
+          <div class=" position-absolute top-0 start-0 ">
+            <input type="file" class="d-none" id="servImgs" (change)="upload($event,i)">
+            <label *ngIf="edit && id == item._id" for="servImgs" class="btn btn-light text-black box-shadow"><i
+                class="bi bi-images"></i></label>
+          </div>
         </div>
+      </div>
+      <div class="col-7 col row d-flex align-items-center justify-content-between flex-column">
+        <div class=" col-12 d-flex  m-0 mt-2 p-0 desc py-3" [ngClass]=" i%2!=0 ? 'descL':'descR justify-content-end'">
+          <button class=" btn rounded-3 btn-danger ani col-1 text-white d-flex align-items-center justify-content-center " (click)="deleteService(item._id)"><i class="bi bi-trash-fill"></i></button>
+
+        </div>
+        <div class=" bg-white p-4 text-black rounded-3 desc position-relative" [ngClass]=" i%2!=0 ? 'descL':'descR'">
+          <i *ngIf="!editLoading" [ngClass]="edit  && id == item._id?'bi bi-check-lg text-success fs-4':'bi bi-pencil-fill'"
+            class=" position-absolute top-0 m-0 p-0 end-0 m-2 cursor-pointer"  (click)="editServ(item._id,i)"></i>
+            <i *ngIf="edit && editLoading" class="position-absolute top-0 m-0 p-0 end-0 spinner-border fs-6 loading" role="status"></i>
+
+          <h2 *ngIf="id != item._id">{{item.servicesName}}</h2>
+          <input *ngIf="edit && id == item._id" type="text" class="w-100 border-0 box-shadow p-2 text-black"
+           placeholder="Services name" [(ngModel)]="name">
+
+          <p *ngIf="id != item._id">{{item.servicesDescription}}</p>
+          <input *ngIf="edit && id == item._id" type="text" class="w-100 border-0 box-shadow p-2 text-black mt-2"
+           placeholder="Services description" [(ngModel)]="desc">
+            <h3 *ngIf="id != item._id" class="text-end main-color2">{{item.servicesPrice}}$</h3>
+            <div class=" col-12 row d-flex align-items-end justify-content-end m-0">
+              <input  *ngIf="edit && id == item._id" type="text" class="col-6 col-sm-5 col-md-4 col-lg-3  border-0 box-shadow p-2 text-black mt-2"
+             placeholder="Services price" [(ngModel)]="price">
+            </div>
+        </div>
+<div class=" col-12 d-flex justify-content-end m-0 mt-2 p-0 desc" [ngClass]=" i%2!=0 ? 'descL':'descR'">
+  <button class=" btn rounded-3 btn-main ani col-3 text-white d-flex align-items-center justify-content-center "> <app-loading *ngIf="loading"></app-loading> <p *ngIf="!loading" class="me-2"><i class="bi bi-cart3"></i></p></button>
+
+</div>
       </div>
     </div>
   </div>
