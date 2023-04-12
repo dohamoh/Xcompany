@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,14 +12,12 @@ import { FooterComponent } from './components/footer/footer.component';
 import { OurServicesComponent } from './components/our-services/our-services.component';
 import { OurClientsComponent } from './components/our-clients/our-clients.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './components/admin/admin.component';
 import { AddadminComponent } from './components/addadmin/addadmin.component';
 import { AddServicesComponent } from './components/add-services/add-services.component';
 import { InputComponent } from './template/input/input.component';
 import { ButtonComponent } from './template/button/button.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ClientDetailsComponent } from './components/client-details/client-details.component';
 
 @NgModule({
   declarations: [
@@ -35,14 +34,12 @@ import { ClientDetailsComponent } from './components/client-details/client-detai
     AddadminComponent,
     AddServicesComponent,
     InputComponent,
-    ButtonComponent,
-    ClientDetailsComponent
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

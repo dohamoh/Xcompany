@@ -2,22 +2,32 @@
   <h1 class=" fa">Add services</h1>
   <div class=" container mt-5">
     <div class="row">
-      <div class=" col-12 row m-0">
+      <form [formGroup]="servicesForm" class=" col-12 row m-0" (ngSubmit)="addServices(servicesForm.value)">
+
         <div class="col-4">
-          <app-input description="Services name"></app-input>
-        </div>
-        <div class="col-4">
-          <app-input description="Services description"></app-input>
+          <input type="text" class="w-100 border-0 border-bottom  p-2 " formControlName="servicesName" placeholder="Services name">
         </div>
         <div class="col-4">
-          <app-input description="Services price"></app-input>
+          <input type="text" class="w-100 border-0 border-bottom  p-2 " formControlName="servicesDescription" placeholder="Services description">
         </div>
-      </div>
-      <div class="col-12 d-flex justify-content-end pe-4 mt-3">
-        <div class="col-lg-2 col-md-3 col-5">
-          <app-button text="ADD"></app-button>
+        <div class="col-4">
+          <input type="number" class="w-100 border-0 border-bottom  p-2 " formControlName="servicesPrice" placeholder="Services price">
         </div>
-      </div>
+
+        <div class="col-12 d-flex justify-content-between mt-3">
+          <div class="col-lg-2 col-md-3 col-5">
+            <input type="file" class="d-none" id="servImgs" (change)="upload($event)">
+            <label for="servImgs" class="btn btn-main box-shadow"><i class="bi bi-images"></i></label>
+          </div>
+          <div class="col-lg-2 col-md-3 col-5">
+
+            <button type="submit" class=" btn rounded-3 btn-main ani w-100 text-white d-flex align-items-center justify-content-center"> <app-loading *ngIf="loading"></app-loading> <p *ngIf="!loading" class="me-2">ADD</p></button>
+
+          </div>
+        </div>
+      </form>
+
+
     </div>
   </div>
 </section>

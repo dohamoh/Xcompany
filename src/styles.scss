@@ -32,12 +32,12 @@ h6 {
 .btn-main {
   // background: linear-gradient(to left top, #00a0e1, #fcd51a);
   background-color: #fcd51a;
-  transition: 1s !important;
+transition: 1s !important;
 }
 
 .btn-main:hover {
   background: linear-gradient(to left top, #fcd51a, #00a0e1);
-  transition: 1s !important;
+transition: 1s !important;
 }
 
 .transition {
@@ -54,4 +54,25 @@ h6 {
 textarea,
 input:focus {
   outline: none !important;
+}
+input{
+  background-color: rgb(255, 255, 255);
+
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(0, 0, 0);
+  opacity: 1; /* Firefox */
+}
+.main-input{
+  background-color: rgb(164, 164, 164);
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(0, 0, 0);
+    opacity: 1; /* Firefox */
+  }
+}
+
+.loading{
+  color: #00a0e1;
+  width: 24px;
+  height: 24px;
 }
