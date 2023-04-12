@@ -15,6 +15,17 @@
 
         <h2 class="text-center text-black fw-bold fs-1 mb-4">Join Us Now</h2>
         <form [formGroup]='registerForm' (ngSubmit)="onSubmit(registerForm.value)">
+
+          <input type="text" class="mb-4 w-100 border-bottom form-control p-2 rounded-3" required="required"
+            placeholder="Your userName" formControlName="userName" name="userName" data-error="userName is required.">
+          <div class="signUpErrs"
+            *ngIf="registerForm.get('userName')?.errors !== null && registerForm.get('userName')?.touched && registerForm.get('userName')">
+            <p *ngIf="registerForm.get('userName')?.errors?.['required'] ">userName is required
+            </p>
+            <p *ngIf="registerForm.get('userName')?.errors?.['minLength'] ">user name min length is 3
+            </p>
+          </div>
+
           <input type="email" class="mb-4 w-100 border-bottom form-control p-2 rounded-3" required="required"
             placeholder="Your Email" formControlName="email" name="email" data-error="Email is required.">
           <div class="signUpErrs"
@@ -26,8 +37,9 @@
           </div>
           <input class="mb-4 w-100 border-bottom form-control p-2 rounded-3" type="password" required="required"
             placeholder="Your Password" formControlName="password" name="password" data-error="Password is required." />
-          <input class="mb-4 w-100 border-bottom form-control p-2 rounded-3" type="number" required="required"
-            placeholder="Your Phone Number" formControlName="phone" name="phone" data-error="PhoneNum is required." />
+          <!-- <input class="mb-4 w-100 border-bottom form-control p-2 rounded-3" type="number" required="required"
+            placeholder="Your Phone Number" formControlName="phone" name="phone" data-error="PhoneNum is required." /> -->
+
           <div class="form-check text-black d-flex justify-content-center mb-3">
             <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
             <label class="form-check-label" for="form2Example3g">

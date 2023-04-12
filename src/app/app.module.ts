@@ -17,6 +17,8 @@ import { AddadminComponent } from './components/addadmin/addadmin.component';
 import { AddServicesComponent } from './components/add-services/add-services.component';
 import { InputComponent } from './template/input/input.component';
 import { ButtonComponent } from './template/button/button.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ClientDetailsComponent } from './components/client-details/client-details.component';
 
 @NgModule({
   declarations: [
@@ -33,12 +35,14 @@ import { ButtonComponent } from './template/button/button.component';
     AddadminComponent,
     AddServicesComponent,
     InputComponent,
-    ButtonComponent
+    ButtonComponent,
+    ClientDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
