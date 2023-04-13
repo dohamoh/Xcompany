@@ -1,20 +1,31 @@
-section{
-  .logos{
-    // position: absolute;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 20rem;
-    height: 20rem;
-  }
-  .images{
+section {
+  .mainDiv {
+    bottom: 7rem;
     position: relative;
-    top: 11rem;
-    left: 13rem;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 18rem;
-    height: 18rem;
+
+    .logos {
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 20rem;
+      height: 20rem;
+    }
+    .images {
+      position: relative;
+      top: 11rem;
+      left: 13rem;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 18rem;
+      height: 18rem;
+    }
+    a{
+      position: absolute;
+      bottom: -6.5rem;
+    }
   }
+}
+.h-0{
+  height: 0rem !important;
 }

@@ -22,4 +22,14 @@ export class ReqsService {
     }
 
     // ----------_____________----------
+    // register
+    signUp(data:any):any {
+      return this.HttpClient.post(`${this.baseUrl}/auth/signUp` , data)
+     }
+     logIn(data:any):any {
+      return this.HttpClient.post(`${this.baseUrl}/auth/logIn` , data)
+     }
+     getUser(token:any):any {
+      return this.HttpClient.get(`${this.baseUrl}/auth/getUser/${token}`)
+     }
 }

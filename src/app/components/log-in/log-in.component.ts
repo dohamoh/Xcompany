@@ -1,6 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ReqsService } from 'src/app/services/reqs.service';
 
 @Component({
   selector: 'app-log-in',
@@ -8,20 +10,37 @@ import { Router } from '@angular/router';
   styleUrls: ['./log-in.component.scss']
 })
 export class LogInComponent {
-  registerForm: FormGroup = new FormGroup({
+  logInForm: FormGroup = new FormGroup({
     email: new FormControl(null, [Validators.required, Validators.email]),
-    phone: new FormControl(null, [Validators.required]),
-    password: new FormControl(null, [Validators.required,Validators.minLength(4)]),
+    password: new FormControl(null, [Validators.required, Validators.minLength(4)]),
   })
-  constructor(private router: Router) { }
+  emailErr:any;
+  passErr:any;
+  constructor(private router: Router, private auth: ReqsService) { }
 
   ngOnInit(): void {
   }
   onSubmit(data: any) {
-    // this.SendEmailService.sendEmail(this.formData.value).subscribe((Data: any) => {
-    //   if (Data.message == 'sended') {
-    //     this.router.navigate(['/home'])
-    //   }
-    // })
+    this.auth.logIn(this.logInForm.value).subscribe(
+      (resData: any) => {
+        console.log(resData.token);
+        if (resData.token) {
+          localStorage.setItem('userToken' , resData.token)
+          this.router.navigate(['/home'])
+        }
+      },
+      (err: HttpErrorResponse) => {
+        if (err.error.message == 'in valid password') {
+          this.passErr = 'in valid password';
+          this.emailErr = '';
+        } else if (err.error.message == 'You have to register first') {
+          this.passErr = '';
+          this.emailErr = 'You have to register first';
+        }else if (err.error.message == 'You have to confirm email first') {
+          this.passErr = '';
+          this.emailErr = 'You have to confirm email first'
+        }
+      }
+    );
   }
 }

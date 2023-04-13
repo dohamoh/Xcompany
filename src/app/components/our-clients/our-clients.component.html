@@ -1,18 +1,21 @@
 <section class="py-5">
-  <div class="container ms-md-4">
-    <div *ngFor="let item of dataArr">
-      <div class="row">
-        <div class="col-12 d-flex justify-content-start" [ngClass]="{'justify-content-end': item.dir == 'right'}" data-aos="fade-down">
+  <div class="container">
+    <div (click)="displayClient = item" *ngFor="let item of dataArr">
+      <div class="row cursor-pointer">
+        <div class="col-12 ms-md-4 mainDiv d-flex justify-content-start mt-5" [ngClass]="{'justify-content-end': item.dir == 'right'}" data-aos="fade-down">
           <div class="images mx-3" style="background-image: url({{item.img1}});"></div>
-          <div class="logos" style="background-image: url({{item.img2}});"></div>
+          <div class="logos" style="background-image: url({{item.img2}});">
+            <a class="fs-5 cursor-pointer" routerLink="/clientDetails">Show More</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- <div class=" top-0 w-100 vh-100 bg-black bg-opacity-75 position-fixed d-flex align-items-center justify-content-center "
-  *ngIf="disPlayHall!=''">
+<div class=" top-0 w-100 vh-100 bg-black bg-opacity-75 position-fixed d-flex align-items-center justify-content-center "
+  *ngIf="displayClient != '' ">
   <div class="">
-    <app-hall-details [hallData]="disPlayHall" (closeHallDetails)="disPlayHall=''"></app-hall-details>
+    <app-client-details [clientData]="displayClient" (closeClientDetails)="displayClient = ''"></app-client-details>
+    <!-- <app-hall-details [hallData]="disPlayHall" (closeHallDetails)="disPlayHall=''"></app-hall-details> -->
   </div>
-</div> -->
+</div>

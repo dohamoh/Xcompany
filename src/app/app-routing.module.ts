@@ -7,6 +7,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { ClientDetailsComponent } from './components/client-details/client-details.component';
 
 const routes: Routes = [
   {path:'',redirectTo:"home",pathMatch:'full'},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'signUp', component:SignUpComponent},
   {path: 'logIn', component:LogInComponent},
   {path: 'admin', component:AdminComponent},
+  {path: 'clientDetails', component:ClientDetailsComponent}
 ];
 
 @NgModule({

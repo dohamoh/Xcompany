@@ -14,6 +14,8 @@ section{
   }
   .main{
     // bottom: 650px;
+    animation: fadeInDown;
+    animation-duration: 2s;
     @media screen and (min-width: 1600px) {
     bottom: 1000px;
     }
@@ -41,8 +43,7 @@ section{
     100% { transform: scale(1); }
   }
   svg {
-    width: 40% !important;
-    // animation: blob 3s ease-in-out infinite;
+    width: 40% !important;;
   }
   form{
     button{

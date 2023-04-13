@@ -8,26 +8,35 @@
     </svg>
   </div>
   <div class="container h-100 position-relative">
-    <!-- style="bottom: 280px;" -->
     <div class="row d-flex justify-content-center align-items-center position-relative h-100">
 
       <div class="main col-xl-6 col-lg-7 col-md-8 col-12 p-5 rounded-3 bg-white position-absolute">
 
         <h2 class="text-center text-black fw-bold fs-1 mb-4">Welcome Back</h2>
-        <form [formGroup]='registerForm' (ngSubmit)="onSubmit(registerForm.value)">
+
+        <form [formGroup]='logInForm' (ngSubmit)="onSubmit(logInForm.value)">
+
+          <p class="text-danger">{{emailErr}}</p>
           <input type="email" class="mb-4 w-100 border-bottom form-control p-2 rounded-3" required="required"
             placeholder="Your Email" formControlName="email" name="email" data-error="Email is required.">
-          <div class="signUpErrs"
-            *ngIf="registerForm.get('email')?.errors !== null && registerForm.get('email')?.touched && registerForm.get('email')">
-            <p *ngIf="registerForm.get('email')?.errors?.['required'] ">email is required
+          <div class="text-danger"
+            *ngIf="logInForm.get('email')?.errors !== null && logInForm.get('email')?.touched && logInForm.get('email')">
+            <p *ngIf="logInForm.get('email')?.errors?.['required'] ">email is required
             </p>
-            <p *ngIf="registerForm.get('email')?.errors?.['email'] ">email is invalid
+            <p *ngIf="logInForm.get('email')?.errors?.['email'] ">email is invalid
             </p>
           </div>
+
+          <p class="text-danger">{{passErr}}</p>
           <input class="mb-4 w-100 border-bottom form-control p-2 rounded-3" type="password" required="required"
             placeholder="Your Password" formControlName="password" name="password" data-error="Password is required." />
+            <div class="text-danger"
+            *ngIf="logInForm.get('password')?.errors !== null && logInForm.get('password')?.touched && logInForm.get('password')">
+            <p *ngIf="logInForm.get('password')?.errors?.['required'] ">password is required
+            </p>
+          </div>
 
-          <button class="w-100 btn m-auto text-center text-white" [disabled]="!registerForm.valid" type="submit">
+          <button class="w-100 btn m-auto text-center text-white" [disabled]="!logInForm.valid" type="submit">
             Sign Up
           </button>
           <div class="toLogIn text-black text-center mt-3">

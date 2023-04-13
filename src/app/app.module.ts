@@ -1,3 +1,4 @@
+import { LoadingComponent } from './components/loading/loading.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,6 +19,7 @@ import { AddadminComponent } from './components/addadmin/addadmin.component';
 import { AddServicesComponent } from './components/add-services/add-services.component';
 import { InputComponent } from './template/input/input.component';
 import { ButtonComponent } from './template/button/button.component';
+import { ClientDetailsComponent } from './components/client-details/client-details.component';
 
 @NgModule({
   declarations: [
@@ -29,17 +31,21 @@ import { ButtonComponent } from './template/button/button.component';
     FooterComponent,
     OurServicesComponent,
     OurClientsComponent,
+    ClientDetailsComponent,
     ContactUsComponent,
     AdminComponent,
     AddadminComponent,
     AddServicesComponent,
     InputComponent,
-    ButtonComponent
+    ButtonComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

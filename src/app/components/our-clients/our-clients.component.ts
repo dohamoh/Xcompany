@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import * as AOS from 'aos';
 AOS.init({
   // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
@@ -17,58 +17,81 @@ AOS.init({
   templateUrl: './our-clients.component.html',
   styleUrls: ['./our-clients.component.scss']
 })
-export class OurClientsComponent {
+export class OurClientsComponent implements OnInit {
+  displayClient:any = ''
+  user:any = ''
   dataArr = [
     {
+      title: "Saudi Ministry Of Education",
       img1: "../../../assets/images/clients/education-website2.png",
       img2: "../../../assets/images/clients/education-remove-bg.png",
       dir: "right"
     },
     {
+      title: "Alba",
       img1: "../../../assets/images/clients/education-website1.png",
       img2: "../../../assets/images/clients/alba-removebg-preview.png",
       dir: "left"
     },
     {
+      title: "Amcan",
       img1: "../../../assets/images/clients/education-website1.png",
       img2: "../../../assets/images/clients/amcan.png",
       dir: "right"
     },
     {
+      title: "Avalon",
       img1: "../../../assets/images/clients/education-website1.png",
       img2: "../../../assets/images/clients/avalon-removebg-preview.png",
       dir: "left"
     },
     {
+      title: "Batal",
       img1: "../../../assets/images/clients/education-website1.png",
       img2: "../../../assets/images/clients/batal-removebg-preview.png",
       dir: "right"
     },
     {
+      title: "Bon-Appetit",
       img1: "../../../assets/images/clients/education-website1.png",
       img2: "../../../assets/images/clients/bon-appetit-removebg-preview.png",
       dir: "left"
     },
     {
+      title: "ffff",
       img1: "../../../assets/images/clients/education-website1.png",
       img2: "../../../assets/images/clients/future-removebg-preview.png",
       dir: "right"
     },
     {
+      title: "gggg",
       img1: "../../../assets/images/clients/education-website1.png",
       img2: "../../../assets/images/clients/jamjoom-remove-bg.png",
       dir: "left"
     },
     {
+      title: "bbbbb",
       img1: "../../../assets/images/clients/education-website1.png",
       img2: "../../../assets/images/clients/jason-removebg-preview.png",
       dir: "right"
     },
     {
+      title: "ffff",
       img1: "../../../assets/images/clients/education-website1.png",
       img2: "../../../assets/images/clients/life-time-heal-removebg-preview.png",
       dir: "left"
     },
   ];
+  ngOnInit(): void {
+    // console.log(1 % 9);
+    // this.SharedService.currentAllHalls.subscribe((data: any) => {
+    //   console.log(data);
+    //   this.allHalls = data
 
+    //   this.SharedService.currentUserData.subscribe((data: any) => {
+    //     this.userData = data;
+    //     console.log(data);
+    //   });
+    // })
+  }
 }

@@ -25,6 +25,8 @@ export class OurServicesComponent {
 
     this.SharedService.currentServices.subscribe((data: any) => {
       this.allServices = data;
+      console.log(data);
+
       setTimeout(() => {
         this.reveal();
       }, 1);
@@ -40,10 +42,8 @@ export class OurServicesComponent {
     for (var i = 0; i < elements.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = elements[i].getBoundingClientRect().top;
-      var elementVisible = 300;
-console.log(elementTop);
-console.log(windowHeight);
-console.log(elementVisible);
+      var elementVisible = 150;
+
 
       if (elementTop < windowHeight - elementVisible) {
         elements[i]?.classList.add('descDef');
