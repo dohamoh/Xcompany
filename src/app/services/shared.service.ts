@@ -9,23 +9,28 @@ import { Router } from '@angular/router';
 })
 export class SharedService {
 
-  constructor(private ReqsService:ReqsService , private router:Router) { }
+  constructor(private ReqsService: ReqsService, private router: Router) { }
 
   private userData = new BehaviorSubject<any>([]);
   currentUserData = this.userData.asObservable();
 
-  // private LoggedIn = new BehaviorSubject<any>([]);
-  // isLoggedIn = this.LoggedIn.asObservable();
+  // private userRole = new BehaviorSubject<any>([]);
+  // currentUserRole = this.userRole.asObservable();
+
+
+  private LoggedIn = new BehaviorSubject<any>([]);
+  isLoggedIn = this.LoggedIn.asObservable();
 
   private services = new BehaviorSubject<any>([]);
   currentServices = this.services.asObservable();
 
   updateUserData() {
     if (localStorage.getItem('userToken')) {
-      this.ReqsService.getUser(localStorage.getItem('userToken')).subscribe(
+      this.ReqsService.getUserRole(localStorage.getItem('userToken')).subscribe(
         (data: any) => {
-          if (data.userData) {
-            this.userData.next(data.userData);
+          if (data.user) { 
+            localStorage.setItem('role', data.user.role);
+            this.userData.next(data.user);
           }
         },
         (err: HttpErrorResponse) => {
@@ -40,18 +45,17 @@ export class SharedService {
       );
     }
   }
-  // isLoggedInFun() {
-  //   if (localStorage.getItem('userToken')) {
-  //     this.LoggedIn.next(true);
-  //   } else {
-  //     this.LoggedIn.next(false);
-  //   }
-  // }
-
+  isLoggedInFun() {
+    if (localStorage.getItem('userToken')) {
+      this.LoggedIn.next(true);
+    } else {
+      this.LoggedIn.next(false);
+    }
+  }
   updateServices() {
     console.log('f');
     this.ReqsService.getAllServices().subscribe((data: any) => {
-      console.log(data);
+      // console.log(data);
       this.services.next(data.allServices);
     });
   }

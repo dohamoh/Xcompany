@@ -29,7 +29,12 @@ export class ReqsService {
      logIn(data:any):any {
       return this.HttpClient.post(`${this.baseUrl}/auth/logIn` , data)
      }
-     getUser(token:any):any {
-      return this.HttpClient.get(`${this.baseUrl}/auth/getUser/${token}`)
+     getUserRole(token:any):any {
+      return this.HttpClient.get(`${this.baseUrl}/auth/getUserRole/${token}`)
      }
 }
+// , {
+//   headers: {
+//     authorization: `Bearer_${localStorage.getItem('userToken')}`,
+//   }
+// }

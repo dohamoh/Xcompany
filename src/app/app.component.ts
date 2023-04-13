@@ -7,9 +7,12 @@ import { SharedService } from './services/shared.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private SharedService:SharedService){}
+  constructor(private SharedService: SharedService) { }
   title = 'velocity-FE';
   ngOnInit(): void {
-this.SharedService.updateServices()
+    this.SharedService.updateUserData();
+    this.SharedService.updateServices()
+    this.SharedService.isLoggedInFun();
+    // localStorage.clear()
   }
 }

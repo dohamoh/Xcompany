@@ -26,7 +26,8 @@
         </li>
       </ul>
       <div class="signUp d-flex justify-content-end">
-        <a class="nav-link me-3 text-white" routerLink="/signUp">Sign Up</a>
+        <a *ngIf="!userLoggedIn" class="nav-link me-3 text-white" routerLink="/signUp">Sign Up</a>
+        <a *ngIf="userLoggedIn" class="nav-link me-3 text-white" routerLink="/signUp" (click)="logOut()">Log Out</a>
         <a class=" ms-3 text-white" href=""><i class="bi bi-cart3"></i></a>
       </div>
     </div>

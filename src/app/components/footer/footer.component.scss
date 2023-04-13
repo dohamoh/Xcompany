@@ -1,0 +1,11 @@
+footer{
+  position: relative;
+  top: 60rem;
+  .bgLogo{
+    width: 20rem;
+    height: 10rem;
+    background-image: url(../../../assets/images/logo2.png);
+    background-position: center;
+    background-size: contain;
+  }
+}
