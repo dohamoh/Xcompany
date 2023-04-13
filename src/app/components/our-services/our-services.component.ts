@@ -11,6 +11,7 @@ export class OurServicesComponent {
   allServices: any;
   edit: Boolean = false;
   name: any;
+  brief: any;
   desc: any;
   price: any;
   id: any;
@@ -23,13 +24,14 @@ export class OurServicesComponent {
   ) {}
   ngOnInit(): void {
 
+
     this.SharedService.currentServices.subscribe((data: any) => {
       this.allServices = data;
       console.log(data);
 
       setTimeout(() => {
         this.reveal();
-      }, 1);
+      }, 10);
 
     });
 
@@ -42,9 +44,7 @@ export class OurServicesComponent {
     for (var i = 0; i < elements.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = elements[i].getBoundingClientRect().top;
-      var elementVisible = 150;
-
-
+      var elementVisible = 110;
       if (elementTop < windowHeight - elementVisible) {
         elements[i]?.classList.add('descDef');
         imgs[i]?.classList.add('imgAni');
@@ -61,7 +61,7 @@ export class OurServicesComponent {
     const reader = new FileReader();
     reader.readAsDataURL(this.file);
     reader.onload = (event: any) => {
-      console.log(event.target.result);
+
 
       this.allServices[i].image = reader.result;
     };
@@ -71,7 +71,7 @@ export class OurServicesComponent {
 
     if (this.id != id) {
       this.name = service.servicesName;
-      this.desc = service.servicesDescription;
+      this.brief = service.servicesBrief;
       this.price = service.servicesPrice;
       this.edit = true;
       this.id = id;
@@ -81,18 +81,18 @@ export class OurServicesComponent {
       let data = new FormData();
       data.append('image', this.file);
       data.append('servicesName', this.name);
-      data.append('servicesDescription', this.desc);
+      data.append('servicesBrief', this.brief);
       data.append('servicesPrice', this.price);
       data.append('id', id);
       this.ReqsService.editServices(data).subscribe((Data: any) => {
-        console.log(Data);
+
 
         if (Data.message == 'DONE') {
           this.editLoading = false;
 
           this.id = '';
           this.edit = !this.edit;
-          this.desc = '';
+          this.brief = '';
           this.name = '';
           this.price = '';
           this.file = '';
@@ -107,5 +107,22 @@ export class OurServicesComponent {
         this.SharedService.updateServices();
       }
     });
+  }
+  showMore(data:any){
+    const Brief = document.querySelector('#Brief') as HTMLElement | any;
+    const Desc = document.querySelector('#Desc') as HTMLElement | any;
+
+if (data.target.innerHTML=='Show more') {
+
+
+  Brief.classList.add('close')
+
+  Desc.classList.remove('close')
+}else{
+  Brief.classList.remove('close')
+
+  Desc.classList.add('close')
+}
+
   }
 }

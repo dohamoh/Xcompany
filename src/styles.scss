@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css");
-
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+*{
+  transition: 0.5s;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -28,7 +33,8 @@ h6 {
   margin: 0;
   padding: 0;
 }
-
+.main-color1{color: #fcd51a;}
+.main-color2{color: #00a0e1;}
 .btn-main {
   // background: linear-gradient(to left top, #00a0e1, #fcd51a);
   background-color: #fcd51a;

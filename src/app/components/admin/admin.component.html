@@ -16,8 +16,9 @@
           <p (click)="switch(addServ)">Add services</p>
         </li>
         <li>
-          <i (click)="switch(add)" class="bi bi-person-fill"></i>
-          <p (click)="switch(add)">kugui</p>
+          <i (click)="switch(add)" class="bi bi-journal-plus"></i>
+
+          <p (click)="switch(add)">Add client</p>
         </li>
         <li>
           <i (click)="switch(dash)" class="bi bi-bar-chart-line-fill"></i>
@@ -36,8 +37,8 @@
 
   <div class="pages text-white">
     <div class="page d-none" #addUser> <app-addadmin></app-addadmin></div>
-    <div class="page " #addServ> <app-add-services></app-add-services></div>
-    <div class="page d-none" #add>add</div>
+    <div class="page d-none" #addServ> <app-add-services></app-add-services></div>
+    <div class="page " #add><app-add-client></app-add-client></div>
     <div class="page d-none" #dash>dash</div>
   </div>
 </section>
