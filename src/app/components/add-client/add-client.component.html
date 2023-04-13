@@ -1,0 +1,43 @@
+<section>
+  <h1 class=" fa">Add Clients</h1>
+  <div class=" container">
+    <div class="row m-0 mt-4">
+      <div class=" col-4 d-flex flex-column px-3">
+        <label for="name">Client name</label>
+        <input id="name" type="text" class="w-100 border-0 border-bottom  p-2 " [(ngModel)]="clientName" placeholder="">
+      </div>
+      <div class=" col-4 d-flex flex-column px-3">
+        <label for="name">Client logo/image</label>
+
+        <input type="file" class="d-none" id="logo" (change)="upload($event)">
+        <label for="logo" class="btn btn-main p-2 rounded-0"><i class="bi bi-images"></i></label>
+      </div>
+      <div class=" col-4 d-flex flex-column px-3">
+        <label for="name">client services</label>
+
+        <ng-multiselect-dropdown class=" bg-white text-black border-0 " [placeholder]="'client services'"
+          [settings]="dropdownSettings" [data]="dropdownList" [(ngModel)]="selectedItems"
+          (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+        </ng-multiselect-dropdown>
+      </div>
+    </div>
+    <div class="row m-0 px-4 mt-5">
+      <div class=" col-2" *ngFor="let item of selectedItems let i = index">
+        <p><span class=" fw-bold">{{item}}</span> Images</p>
+        <input type="file" class="d-none" id="servsImgs{{i}}" (change)="servImg($event,item)" multiple>
+        <label for="servsImgs{{i}}" class="btn btn-main p-2 rounded-0 w-50 "><i class="bi bi-images"></i></label>
+      </div>
+    </div>
+    <div class=" col-12 row d-flex  justify-content-end mt-4">
+
+      <button type="submit"
+      (click)="addClient()"
+        class=" btn rounded-3 btn-main ani col-2 text-white d-flex align-items-center justify-content-center">
+        <app-loading *ngIf="loading"></app-loading>
+        <p *ngIf="!loading" class="me-2">ADD</p>
+      </button>
+
+
+    </div>
+  </div>
+</section>

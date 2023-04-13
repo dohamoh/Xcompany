@@ -1,7 +1,15 @@
 <div class=" container ani">
-  <h1 class=" text-center ">Services That Gets Results !</h1>
+  <h1 class=" text-center ">Discover Our Services''</h1>
+  <p class=" text-center w-50 mx-auto">We create
+    experiences for the
+    world’s leading brands.
+    We’re a team of thinkers, planners, and
+    makers, designing live
+    events, virtual experiences, and unique digital
+    tools. We find the extraordinary</p>
+  <p></p>
   <div class="row">
-    <div class="col-12 row d-flex align-items-center " *ngFor="let item of allServices let i = index"
+    <div class="col-12 row d-flex align-items-start mt-5" *ngFor="let item of allServices let i = index"
       [ngClass]="{'flex-row-reverse': i%2!=0}">
       <div class="col-5 col">
         <div class="img position-relative overflow-hidden" style="background-image: url({{item.image}});">
@@ -12,43 +20,75 @@
           </div>
         </div>
       </div>
-      <div class="col-7 col row d-flex align-items-center justify-content-between flex-column">
-        <div class=" col-12 d-flex  m-0 mt-2 p-0 desc py-3" [ngClass]=" i%2!=0 ? 'descL':'descR justify-content-end'">
-          <button
-            class=" btn rounded-3 btn-danger ani col-1 text-white d-flex align-items-center justify-content-center "
-            (click)="deleteService(item._id)"><i class="bi bi-trash-fill"></i></button>
 
-        </div>
-        <div class=" bg-white p-4 text-black rounded-3 desc position-relative" [ngClass]=" i%2!=0 ? 'descL':'descR'">
-          <i *ngIf="!editLoading"
-            [ngClass]="edit  && id == item._id?'bi bi-check-lg text-success fs-4':'bi bi-pencil-fill'"
-            class=" position-absolute top-0 m-0 p-0 end-0 m-2 cursor-pointer" (click)="editServ(item._id,i)"></i>
-          <i *ngIf="edit && editLoading" class="position-absolute top-0 m-0 p-0 end-0 spinner-border fs-6 loading"
-            role="status"></i>
 
-          <h2 *ngIf="id != item._id">{{item.servicesName}}</h2>
-          <input *ngIf="edit && id == item._id" type="text" class="w-100 border-0 box-shadow p-2 text-black"
-            placeholder="Services name" [(ngModel)]="name">
+      <div class="col-7 row m-0">
+        <div class=" col-12 col row d-flex align-items-center justify-content-between flex-column" id="Brief">
 
-          <p *ngIf="id != item._id">{{item.servicesDescription}}</p>
-          <input *ngIf="edit && id == item._id" type="text" class="w-100 border-0 box-shadow p-2 text-black mt-2"
-            placeholder="Services description" [(ngModel)]="desc">
-          <h3 *ngIf="id != item._id" class="text-end main-color2">{{item.servicesPrice}}$</h3>
-          <div class=" col-12 row d-flex align-items-end justify-content-end m-0">
-            <input *ngIf="edit && id == item._id" type="text"
-              class="col-6 col-sm-5 col-md-4 col-lg-3  border-0 box-shadow p-2 text-black mt-2"
-              placeholder="Services price" [(ngModel)]="price">
+          <div class=" col-12 d-flex  m-0 mt-2 p-0 desc py-3" [ngClass]=" i%2!=0 ? 'descL':'descR justify-content-end'">
+            <button
+              class=" btn rounded-3 btn-danger ani col-1 text-white d-flex align-items-center justify-content-center "
+              (click)="deleteService(item._id)"><i class="bi bi-trash-fill"></i></button>
+
           </div>
+          <div class=" bg-white p-4 text-black rounded-3 desc position-relative" [ngClass]=" i%2!=0 ? 'descL':'descR'">
+            <i *ngIf="!editLoading"
+              [ngClass]="edit  && id == item._id?'bi bi-check-lg text-success fs-4':'bi bi-pencil-fill'"
+              class=" position-absolute top-0 m-0 p-0 end-0 m-2 cursor-pointer" (click)="editServ(item._id,i)"></i>
+            <i *ngIf="edit && editLoading" class="position-absolute top-0 m-0 p-0 end-0 spinner-border fs-6 loading"
+              role="status"></i>
+
+            <h2 *ngIf="id != item._id">{{item.servicesName}}</h2>
+            <input *ngIf="edit && id == item._id" type="text" class="w-100 border-0 box-shadow p-2 text-black"
+              placeholder="Services name" [(ngModel)]="name">
+
+            <p *ngIf="id != item._id">{{item.servicesBrief}}</p>
+            <input *ngIf="edit && id == item._id" type="text" class="w-100 border-0 box-shadow p-2 text-black mt-2"
+              placeholder="Services description" [(ngModel)]="brief">
+            <h3 *ngIf="id != item._id" class="text-end main-color2">{{item.servicesPrice}}$</h3>
+            <div class=" col-12 row d-flex align-items-end justify-content-end m-0">
+              <input *ngIf="edit && id == item._id" type="text"
+                class="col-6 col-sm-5 col-md-4 col-lg-3  border-0 box-shadow p-2 text-black mt-2"
+                placeholder="Services price" [(ngModel)]="price">
+            </div>
+          </div>
+          <div class=" col-12 d-flex justify-content-between m-0 mt-2 p-0 desc" [ngClass]=" i%2!=0 ? 'descL':'descR'">
+            <p class=" text-primary text-decoration-underline cursor-pointer" (click)="showMore($event)">Show more</p>
+
+            <button
+              class=" btn rounded-3 btn-main ani col-3 text-white d-flex align-items-center justify-content-center ">
+              <app-loading *ngIf="loading"></app-loading>
+              <p *ngIf="!loading" class="me-2"><i class="bi bi-cart3"></i></p>
+            </button>
+          </div>
+
+
         </div>
-        <div class=" col-12 d-flex justify-content-end m-0 mt-2 p-0 desc" [ngClass]=" i%2!=0 ? 'descL':'descR'">
-          <button
-            class=" btn rounded-3 btn-main ani col-3 text-white d-flex align-items-center justify-content-center ">
-            <app-loading *ngIf="loading"></app-loading>
-            <p *ngIf="!loading" class="me-2"><i class="bi bi-cart3"></i></p>
-          </button>
+
+
+
+        <div class="col-12 col row d-flex align-items-center justify-content-between flex-column close text-white"
+          id="Desc">
+          <app-services-details [data]="item"></app-services-details>
+          <p class=" text-primary text-decoration-underline cursor-pointer" (click)="showMore($event)">Show less</p>
 
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
   </div>
 </div>

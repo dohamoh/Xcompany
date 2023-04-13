@@ -21,6 +21,10 @@ import { InputComponent } from './template/input/input.component';
 import { ButtonComponent } from './template/button/button.component';
 import { ClientDetailsComponent } from './components/client-details/client-details.component';
 
+import { ServicesDetailsComponent } from './components/services-details/services-details.component';
+import { AddClientComponent } from './components/add-client/add-client.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,14 +42,19 @@ import { ClientDetailsComponent } from './components/client-details/client-detai
     AddServicesComponent,
     InputComponent,
     ButtonComponent,
-    LoadingComponent
+    LoadingComponent,
+
+    ServicesDetailsComponent,
+    AddClientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

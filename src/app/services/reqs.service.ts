@@ -9,7 +9,8 @@ export class ReqsService {
   constructor(private HttpClient:HttpClient) { }
   // services
   addServices(data: any): any {
-      return this.HttpClient.post(`${this.baseUrl}/services/addServices`, data);
+
+      return this.HttpClient.post(`${this.baseUrl}/services/addServices`,data);
     }
     getAllServices(): any {
       return this.HttpClient.get(`${this.baseUrl}/services/getAllServices`);
@@ -32,6 +33,13 @@ export class ReqsService {
      getUserRole(token:any):any {
       return this.HttpClient.get(`${this.baseUrl}/auth/getUserRole/${token}`)
      }
+    // client
+
+    addClient(data:any): any {
+      return this.HttpClient.post(`${this.baseUrl}/client/addClient`,data);
+    }
+
+    // -------___________-------
 }
 // , {
 //   headers: {
