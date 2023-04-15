@@ -116,15 +116,9 @@ addAdmin(data:any): any {
 
     // -------___________-------
     // clients
-<<<<<<< HEAD
-    getAllClients(): any {
-      return this.HttpClient.get(`${this.baseUrl}/client/getAllClients`);
-    }
-=======
 
 
 
->>>>>>> c63abd5a1ddf2fa0b8018a206f043aa9eff13223
         // -------___________-------
 
 // user

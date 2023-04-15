@@ -74,22 +74,14 @@ export class SharedService {
     });
   }
 
-<<<<<<< HEAD
-  updateClientServices() {
-    
-=======
   switchCartValue() {
 
       this.cart.next(!this.cart.value);
 
 
->>>>>>> c63abd5a1ddf2fa0b8018a206f043aa9eff13223
   }
 
-  switchCartValue() {
-    this.cart.next(!this.cart.value);
-    console.log(this.cart.value);
-  }
+
   updateAllData() {
     this.updateUserData()
     this.updateClients()
