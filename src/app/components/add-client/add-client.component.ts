@@ -1,6 +1,7 @@
 import { ReqsService } from 'src/app/services/reqs.service';
 import { Component } from '@angular/core';
-import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import { SharedService } from 'src/app/services/shared.service';
+
 @Component({
   selector: 'app-add-client',
   templateUrl: './add-client.component.html',
@@ -13,20 +14,45 @@ export class AddClientComponent {
   files: any = [];
   clientName: any;
   loading: Boolean = false;
-  constructor(private ReqsService: ReqsService) {}
+  constructor(private ReqsService: ReqsService,private SharedService:SharedService) {}
   ngOnInit() {
-    this.dropdownList = ['Mumbai', 'Bangaluru', 'Pune', 'Navsari', 'New Delhi'];
-    this.dropdownSettings = {
-      singleSelection: false,
-      idField: 'item_id',
-      textField: 'item_text',
-      selectAllText: 'Select All',
-      unSelectAllText: 'UnSelect All',
-      itemsShowLimit: 3,
-      allowSearchFilter: false,
-    };
+
+    this.SharedService.currentServices.subscribe((data:any)=>{
+      console.log(data);
+// this.dropdownList = data
+if (data.length !=0) {
+  let arr =[]
+  arr =data
+
+  // for (let i = 0; i < data.length; i++) {
+  //   const element = data[i];
+  //   // console.log(element);
+
+  // arr.push(element?.servicesName)
+  // }
+  this.dropdownList = arr
+  this.dropdownSettings = {
+    singleSelection: false,
+
+    textField: 'servicesName',
+    selectAllText: 'Select All',
+    unSelectAllText: 'UnSelect All',
+    itemsShowLimit: 3,
+    allowSearchFilter: false,
+  };
+}
+
+
+
+
+    })
+    // this.dropdownList = [{id:'lkdhiols,name:'Mumbai'}, 'Bangaluru', 'Pune', 'Navsari', 'New Delhi'];
+
   }
   onItemSelect(item: any) {
+    // console.log(item);
+    // this.selectedItems.push(item.servicesName)
+    // console.log(this.selectedItems);
   }
   onSelectAll(items: any) {
   }
@@ -36,7 +62,7 @@ export class AddClientComponent {
     this.files.push(files[0]);
   }
   servImg(event: any, name: any) {
-    console.log(name);
+
 
     let arr1 = this.files;
     this.files = [];
@@ -52,8 +78,11 @@ export class AddClientComponent {
   }
 
   select(data: any) {
+
+
   }
   addClient() {
+    let arr:any = []
     let formData = new FormData();
     if (this.loading) {
       this.loading = !this.loading;
@@ -63,8 +92,15 @@ export class AddClientComponent {
         const element = this.files[i];
         formData.append(element.for, element);
       }
+      for (let i = 0; i < this.selectedItems.length; i++) {
+        const element = this.selectedItems[i];
+      console.log(element);
+arr.push(element.servicesName)
+      }
+
+
       formData.append('clientName', this.clientName);
-      formData.append('services', this.selectedItems);
+      formData.append('services', arr);
       this.ReqsService.addClient(formData).subscribe((data: any) => {
         if (data.message == 'added successfully') {
           this.loading = !this.loading;
@@ -72,4 +108,5 @@ export class AddClientComponent {
       });
     }
   }
+
 }

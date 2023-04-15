@@ -40,6 +40,26 @@ export class ReqsService {
     }
 
     // -------___________-------
+    // clients
+    getAllClients(): any {
+
+      return this.HttpClient.get(`${this.baseUrl}/client/getAllClients`);
+    }
+
+
+        // -------___________-------
+
+// user
+addToCart(id:any): any {
+ let data={
+    id
+  }
+      return this.HttpClient.post(`${this.baseUrl}/user/addToCart`,data, {
+        headers: {
+          authorization: `Bearer__${localStorage.getItem('userToken')}`,
+        }
+      });
+    }
 }
 // , {
 //   headers: {

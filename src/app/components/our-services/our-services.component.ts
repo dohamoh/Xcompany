@@ -23,8 +23,6 @@ export class OurServicesComponent {
     private ReqsService: ReqsService
   ) {}
   ngOnInit(): void {
-
-
     this.SharedService.currentServices.subscribe((data: any) => {
       this.allServices = data;
       console.log(data);
@@ -32,9 +30,7 @@ export class OurServicesComponent {
       setTimeout(() => {
         this.reveal();
       }, 10);
-
     });
-
   }
   @HostListener('window:scroll', [])
   reveal() {
@@ -61,8 +57,6 @@ export class OurServicesComponent {
     const reader = new FileReader();
     reader.readAsDataURL(this.file);
     reader.onload = (event: any) => {
-
-
       this.allServices[i].image = reader.result;
     };
   }
@@ -85,8 +79,6 @@ export class OurServicesComponent {
       data.append('servicesPrice', this.price);
       data.append('id', id);
       this.ReqsService.editServices(data).subscribe((Data: any) => {
-
-
         if (Data.message == 'DONE') {
           this.editLoading = false;
 
@@ -108,21 +100,29 @@ export class OurServicesComponent {
       }
     });
   }
-  showMore(data:any){
+  showMore(data: any) {
     const Brief = document.querySelector('#Brief') as HTMLElement | any;
     const Desc = document.querySelector('#Desc') as HTMLElement | any;
 
-if (data.target.innerHTML=='Show more') {
+    if (data.target.innerHTML == 'Show more') {
+      Brief.classList.add('close');
 
+      Desc.classList.remove('close');
+    } else {
+      Brief.classList.remove('close');
 
-  Brief.classList.add('close')
-
-  Desc.classList.remove('close')
-}else{
-  Brief.classList.remove('close')
-
-  Desc.classList.add('close')
-}
-
+      Desc.classList.add('close');
+    }
   }
+addToCart(id:any){
+  console.log(id);
+  this.ReqsService.addToCart(id).subscribe((data:any)=>{
+    console.log(data);
+
+    if (data.message == 'added') {
+this.SharedService.updateUserData()
+    }
+  })
+
+}
 }

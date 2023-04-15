@@ -1,0 +1,36 @@
+<section [ngClass]="!style?'open':'close'" class=" pt-5 scroll transition">
+  <div class=" position-absolute top-0 end-0 m-3 text-black cursor-pointer" (click)="close()"><i class="bi bi-x-lg"></i></div>
+
+<div class="row mb-4" >
+  <div #item class=" box-shadow p-4 transition">
+    <div  class="col-12 img d-flex align-items-center justify-content-end" style="background-image: url('../../../assets/images/aboutusjpg.jpg');">
+      <i class="bi bi-trash-fill fs-4 cursor-pointer text-danger" (click)="item.classList.add('closeItem')"></i>
+    </div>
+    <div class="col-12">
+      <p>dfhbksldfj sgrkl</p>
+      <p class="main-color2">2658$</p>
+    </div>
+  </div>
+</div>
+<div class="row mb-4" >
+  <div #item class=" box-shadow p-4">
+    <div  class="col-12 img d-flex align-items-center justify-content-end" style="background-image: url('../../../assets/images/aboutusjpg.jpg');">
+      <i class="bi bi-trash-fill fs-4 cursor-pointer text-danger" (click)="item.classList.add('closeItem')"></i>
+    </div>
+    <div class="col-12">
+      <p>dfhbksldfj sgrkl</p>
+      <p class="main-color2">2658$</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="row px-4">
+  <div class=" d-flex align-items-center justify-content-between">
+    <h2>total: </h2>
+    <h2>9896$</h2>
+  </div>
+  <button class=" btn btn-light rounded-3 box-shadow mt-3 mb-2">Clear</button>
+  <button class=" btn btn-main rounded-3 box-shadow">Check out</button>
+</div>
+</section>

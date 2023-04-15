@@ -1,21 +1,32 @@
 <section class="py-5">
   <div class="container">
-    <div (click)="displayClient = item" *ngFor="let item of dataArr">
+    <div (click)="displayClient = item" *ngFor="let item of dataArr let i = index">
       <div class="row cursor-pointer">
-        <div class="col-12 ms-md-4 mainDiv d-flex justify-content-start mt-5" [ngClass]="{'justify-content-end': item.dir == 'right'}" data-aos="fade-down">
-          <div class="images mx-3" style="background-image: url({{item.img1}});"></div>
-          <div class="logos" style="background-image: url({{item.img2}});">
-            <a class="fs-5 cursor-pointer" routerLink="/clientDetails">Show More</a>
+        <div class="col-12  d-flex  mt-5"
+          [ngClass]="i%2 ==0?'justify-content-end':'justify-content-start'" data-aos="fade-down">
+          <div class=" col-6 row">
+            <div class="col-12 text-capitalize" [ngClass]="i%2 ==0?'text-end':'text-start'">
+              <h3>{{item.clientName}}</h3>
+            </div>
+            <div class="col-12 my-2 row">
+              <div class="col-12 logo" style="background-image: url({{item.image}});">
+              </div>
+              <p class=" text-primary text-decoration-underline cursor-pointer" (click)="openNum = i" (click)="disClient(i)">Show more</p>
+              <div class="col-12"></div>
+            </div>
           </div>
+
         </div>
+        <div *ngIf="i == openNum " id="details{{i}}" class="close"><app-client-details></app-client-details></div>
+
       </div>
     </div>
   </div>
 </section>
-<div class=" top-0 w-100 vh-100 bg-black bg-opacity-75 position-fixed d-flex align-items-center justify-content-center "
+<!-- <div class=" top-0 w-100 vh-100 bg-black bg-opacity-75 position-fixed d-flex align-items-center justify-content-center "
   *ngIf="displayClient != '' ">
-  <div class="">
-    <app-client-details [clientData]="displayClient" (closeClientDetails)="displayClient = ''"></app-client-details>
+  <div class=""> -->
+    <!-- <app-client-details [clientData]="displayClient" (closeClientDetails)="displayClient = ''"></app-client-details> -->
     <!-- <app-hall-details [hallData]="disPlayHall" (closeHallDetails)="disPlayHall=''"></app-hall-details> -->
-  </div>
-</div>
+  <!-- </div>
+</div> -->

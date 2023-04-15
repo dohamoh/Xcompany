@@ -24,6 +24,7 @@ import { ClientDetailsComponent } from './components/client-details/client-detai
 import { ServicesDetailsComponent } from './components/services-details/services-details.component';
 import { AddClientComponent } from './components/add-client/add-client.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     LoadingComponent,
 
     ServicesDetailsComponent,
-    AddClientComponent
+    AddClientComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
