@@ -1,31 +1,47 @@
-section {
-  .mainDiv {
-    bottom: 7rem;
-    position: relative;
+// section {
+//   .mainDiv {
+//     bottom: 7rem;
+//     position: relative;
 
-    .logos {
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      width: 20rem;
-      height: 20rem;
-    }
-    .images {
-      position: relative;
-      top: 11rem;
-      left: 13rem;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      width: 18rem;
-      height: 18rem;
-    }
-    a{
-      position: absolute;
-      bottom: -6.5rem;
-    }
-  }
+//     .logos {
+//       background-position: center;
+//       background-size: contain;
+//       background-repeat: no-repeat;
+//       width: 20rem;
+//       height: 20rem;
+//     }
+//     .images {
+//       position: relative;
+//       top: 11rem;
+//       left: 13rem;
+//       background-position: center;
+//       background-size: contain;
+//       background-repeat: no-repeat;
+//       width: 18rem;
+//       height: 18rem;
+//     }
+//     a{
+//       position: absolute;
+//       bottom: -6.5rem;
+//     }
+//   }
+// }
+// .h-0{
+//   height: 0rem !important;
+// }
+.logo {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 20rem;
 }
-.h-0{
-  height: 0rem !important;
+.details{
+  height: 80vh !important;
+  transition: 1s !important;
+
+}
+.close{
+  transition: 1s !important;
+
+  height: 0vh !important;
 }

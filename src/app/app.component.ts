@@ -10,9 +10,9 @@ export class AppComponent {
   constructor(private SharedService: SharedService) { }
   title = 'velocity-FE';
   ngOnInit(): void {
-    this.SharedService.updateUserData();
-    this.SharedService.updateServices()
-    this.SharedService.isLoggedInFun();
+
+    this.SharedService.updateAllData();
+
     // localStorage.clear()
   }
 }

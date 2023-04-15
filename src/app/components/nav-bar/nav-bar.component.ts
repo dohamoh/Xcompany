@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class NavBarComponent implements OnInit {
   userLoggedIn:any;
+  userData:any
   constructor(private SharedService:SharedService , private router:Router){}
   ngOnInit(): void {
     this.SharedService.isLoggedIn.subscribe((value) => {
@@ -18,6 +19,9 @@ export class NavBarComponent implements OnInit {
         this.userLoggedIn = false
       }
     })
+    this.SharedService.currentUserData.subscribe((data:any)=>{
+this.userData = data
+    })
   }
   logOut(){
     if (this.userLoggedIn == true) {
@@ -26,5 +30,7 @@ export class NavBarComponent implements OnInit {
       this.router.navigate(['/signUp'])
     }
   }
-
+cart(){
+  this.SharedService.switchCartValue()
+}
 }

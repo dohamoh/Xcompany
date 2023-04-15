@@ -22,8 +22,8 @@
     </div>
     <div class="row m-0 px-4 mt-5">
       <div class=" col-2" *ngFor="let item of selectedItems let i = index">
-        <p><span class=" fw-bold">{{item}}</span> Images</p>
-        <input type="file" class="d-none" id="servsImgs{{i}}" (change)="servImg($event,item)" multiple>
+        <p><span class=" fw-bold">{{item.servicesName}}</span> Images</p>
+        <input type="file" class="d-none" id="servsImgs{{i}}" (change)="servImg($event,item.servicesName)" multiple>
         <label for="servsImgs{{i}}" class="btn btn-main p-2 rounded-0 w-50 "><i class="bi bi-images"></i></label>
       </div>
     </div>
