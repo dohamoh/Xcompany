@@ -18,18 +18,10 @@ export class AddClientComponent {
   ngOnInit() {
 
     this.SharedService.currentServices.subscribe((data:any)=>{
-      console.log(data);
-// this.dropdownList = data
 if (data.length !=0) {
   let arr =[]
   arr =data
 
-  // for (let i = 0; i < data.length; i++) {
-  //   const element = data[i];
-  //   // console.log(element);
-
-  // arr.push(element?.servicesName)
-  // }
   this.dropdownList = arr
   this.dropdownSettings = {
     singleSelection: false,
@@ -46,13 +38,10 @@ if (data.length !=0) {
 
 
     })
-    // this.dropdownList = [{id:'lkdhiols,name:'Mumbai'}, 'Bangaluru', 'Pune', 'Navsari', 'New Delhi'];
 
   }
   onItemSelect(item: any) {
-    // console.log(item);
-    // this.selectedItems.push(item.servicesName)
-    // console.log(this.selectedItems);
+
   }
   onSelectAll(items: any) {
   }
@@ -94,7 +83,6 @@ if (data.length !=0) {
       }
       for (let i = 0; i < this.selectedItems.length; i++) {
         const element = this.selectedItems[i];
-      console.log(element);
 arr.push(element.servicesName)
       }
 

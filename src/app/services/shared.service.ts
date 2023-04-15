@@ -38,6 +38,8 @@ export class SharedService {
       this.ReqsService.getUserRole(localStorage.getItem('userToken')).subscribe(
         (data: any) => {
           if (data.user) {
+
+
             localStorage.setItem('role', data.user.role);
             this.userData.next(data.user);
           }
@@ -72,8 +74,16 @@ export class SharedService {
     });
   }
 
+<<<<<<< HEAD
   updateClientServices() {
     
+=======
+  switchCartValue() {
+
+      this.cart.next(!this.cart.value);
+
+
+>>>>>>> c63abd5a1ddf2fa0b8018a206f043aa9eff13223
   }
 
   switchCartValue() {

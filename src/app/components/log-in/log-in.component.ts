@@ -24,7 +24,7 @@ export class LogInComponent {
   onSubmit(data: any) {
     this.auth.logIn(this.logInForm.value).subscribe(
       (resData: any) => {
-        console.log(resData.token);
+
         if (resData.token) {
           localStorage.setItem('userToken', resData.token);
           this.SharedService.updateUserData()
