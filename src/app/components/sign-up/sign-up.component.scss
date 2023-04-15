@@ -1,7 +1,7 @@
 section{
   height: 90vh;
   overflow: hidden;
-  &::before{
+    &::before{
     content: "";
     position: absolute;
     bottom: 0px;
@@ -13,6 +13,8 @@ section{
     background-size: 100%;
   }
   .main{
+    box-shadow: 10px 10px 20px 5px rgba(50, 44, 44, 0.537);
+
     // bottom: 650px;
     animation: fadeInDown;
     animation-duration: 2s;

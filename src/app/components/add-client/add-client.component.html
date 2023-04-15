@@ -4,7 +4,7 @@
     <div class="row m-0 mt-4">
       <div class=" col-4 d-flex flex-column px-3">
         <label for="name">Client name</label>
-        <input id="name" type="text" class="w-100 border-0 border-bottom  p-2 " [(ngModel)]="clientName" placeholder="">
+        <input id="name" type="text" class="w-100 bg-light border-0 border-bottom p-2 " [(ngModel)]="clientName" placeholder="">
       </div>
       <div class=" col-4 d-flex flex-column px-3">
         <label for="name">Client logo/image</label>
@@ -14,7 +14,6 @@
       </div>
       <div class=" col-4 d-flex flex-column px-3">
         <label for="name">client services</label>
-
         <ng-multiselect-dropdown class=" bg-white text-black border-0 " [placeholder]="'client services'"
           [settings]="dropdownSettings" [data]="dropdownList" [(ngModel)]="selectedItems"
           (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">

@@ -1,11 +1,34 @@
-footer{
+footer {
   position: relative;
   top: 65rem;
-  .bgLogo{
+  background: linear-gradient(180deg, #85c9f9, #03678f, #023143);
+
+  .bgLogo {
     width: 20rem;
-    height: 10rem;
-    background-image: url(../../../assets/images/logo2.png);
+    height: 13rem;
+    background-image: url(../../../assets/images/logo1.png);
     background-position: center;
     background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  p {
+    line-height: 1.8;
+  }
+
+  h4 {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  button {
+    background: linear-gradient(35deg, #00a5e5, #cfb733, #a7b93d);
+    transition: 1s;
+    &:hover {
+      background: linear-gradient(to left , #fcd51a  , #b4d401);
+      // background-color: #fcd51a !important;
+      transition: 1s !important;
+    }
   }
 }
+
+// background: linear-gradient(to top, #00a5e5, #fbd31a, #cfb733, #a7b93d);

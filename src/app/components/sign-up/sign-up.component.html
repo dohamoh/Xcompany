@@ -14,7 +14,7 @@
 
         <h2 class="text-center text-black fw-bold fs-1 mb-4">Join Us Now</h2>
         <form [formGroup]='registerForm' (ngSubmit)="onSubmit(registerForm.value)">
-          
+
           <p class="text-danger">{{emailErr}}</p>
 
           <input type="email" class="mb-4 w-100 border-bottom form-control p-2 rounded-3" required="required"
@@ -34,8 +34,6 @@
             </p>
 
           </div>
-
-
           <input class="mb-4 w-100 border-bottom form-control p-2 rounded-3" type="password" required="required"
             placeholder="Your Password" formControlName="password" name="password" data-error="Password is required." />
             <div class="signUpErrs"
@@ -45,13 +43,12 @@
             <p *ngIf="registerForm.get('password')?.errors?.['minLength'] ">password min length is 4
             </p>
           </div>
-
-          <div class="form-check text-black d-flex justify-content-center mb-3">
+          <!-- <div class="form-check text-black d-flex justify-content-center mb-3">
             <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
             <label class="form-check-label" for="form2Example3g">
               I agree all statements in <a href="#!" class="text-black"><u>Terms of service</u></a>
             </label>
-          </div>
+          </div> -->
           <button class="w-100 btn m-auto text-center text-white" [disabled]="!registerForm.valid" type="submit">
             Sign Up
           </button>

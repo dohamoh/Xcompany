@@ -6,7 +6,6 @@ section {
       right: 10%;
       top: 0%;
     }
-
     .mainText {
       position: absolute;
       z-index: 5;
@@ -14,19 +13,23 @@ section {
       left: 15%;
 
       h1 {
-        background-color: rgb(255, 255, 255);
+        // background-color: rgb(255, 255, 255);
         border-radius: 5rem;
         font-size: 3.5rem;
       }
 
       h2 {
-        background-color: rgb(238, 255, 0);
+        background-color: rgb(255, 230, 0);
         border-radius: 5rem;
         font-size: 2.5rem;
       }
+      .headerBtn:hover{
+        background: linear-gradient(to left , #fcd51a  , #b4d401) !important;
+        font-weight: 600;
+      }
+
     }
   }
-
   #homeBody {
     .section1 {
       .bgImg1 {
@@ -35,9 +38,6 @@ section {
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        // background-attachment: fixed;
-        // border: 2px solid red;
-        // border-radius: 50%;
         height: 14rem;
         width: 14rem !important;
       }
@@ -57,7 +57,6 @@ section {
       h1 {
         font-size: 3.5rem;
         top: 0rem;
-        // left: 10rem;
       }
 
       h3 {
