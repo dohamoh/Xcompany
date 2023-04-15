@@ -6,7 +6,7 @@
           [ngClass]="i%2 ==0?'justify-content-end':'justify-content-start'" data-aos="fade-down">
           <div class=" col-6 row">
             <div class="col-12 text-capitalize" [ngClass]="i%2 ==0?'text-end':'text-start'">
-              <h3>{{item.clientName}}</h3>
+              <h3 class="fw-semibold fs-2">{{item.clientName}}</h3>
             </div>
             <div class="col-12 my-2 row">
               <div class="col-12 logo" style="background-image: url({{item.image}});">
@@ -17,8 +17,7 @@
           </div>
 
         </div>
-        <div *ngIf="i == openNum " id="details{{i}}" class="close"><app-client-details></app-client-details></div>
-
+        <div *ngIf="i == openNum " id="details{{i}}" class="close"><app-client-details [clientData]="item"></app-client-details></div>
       </div>
     </div>
   </div>

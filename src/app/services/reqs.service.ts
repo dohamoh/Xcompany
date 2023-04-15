@@ -42,11 +42,8 @@ export class ReqsService {
     // -------___________-------
     // clients
     getAllClients(): any {
-
       return this.HttpClient.get(`${this.baseUrl}/client/getAllClients`);
     }
-
-
         // -------___________-------
 
 // user

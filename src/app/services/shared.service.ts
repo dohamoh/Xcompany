@@ -30,6 +30,9 @@ export class SharedService {
   private clients = new BehaviorSubject<any>([]);
   currentClients = this.clients.asObservable();
 
+  private clientServices = new BehaviorSubject<any>([]);
+  currentClientServices = this.clientServices.asObservable();
+
   updateUserData() {
     if (localStorage.getItem('userToken')) {
       this.ReqsService.getUserRole(localStorage.getItem('userToken')).subscribe(
@@ -69,15 +72,16 @@ export class SharedService {
     });
   }
 
-  switchCartValue() {
-
-      this.cart.next(!this.cart.value);
-      console.log(this.cart.value);
-
-
+  updateClientServices() {
+    
   }
-  updateAllData(){
-this.updateUserData()
+
+  switchCartValue() {
+    this.cart.next(!this.cart.value);
+    console.log(this.cart.value);
+  }
+  updateAllData() {
+    this.updateUserData()
     this.updateClients()
     this.updateServices()
     this.isLoggedInFun()

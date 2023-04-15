@@ -21,7 +21,7 @@ export class OurServicesComponent {
   constructor(
     private SharedService: SharedService,
     private ReqsService: ReqsService
-  ) {}
+  ) { }
   ngOnInit(): void {
     this.SharedService.currentServices.subscribe((data: any) => {
       this.allServices = data;
@@ -114,15 +114,15 @@ export class OurServicesComponent {
       Desc.classList.add('close');
     }
   }
-addToCart(id:any){
-  console.log(id);
-  this.ReqsService.addToCart(id).subscribe((data:any)=>{
-    console.log(data);
+  addToCart(id: any) {
+    console.log(id);
+    this.ReqsService.addToCart(id).subscribe((data: any) => {
+      console.log(data);
 
-    if (data.message == 'added') {
-this.SharedService.updateUserData()
-    }
-  })
+      if (data.message == 'added') {
+        this.SharedService.updateUserData()
+      }
+    })
 
-}
+  }
 }

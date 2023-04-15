@@ -15,6 +15,8 @@ section {
   }
 
   .main {
+    box-shadow: 10px 10px 20px 5px rgba(50, 44, 44, 0.537);
+
     animation: fadeInDown;
     animation-duration: 1.5s;
     @media screen and (min-width: 1600px) {

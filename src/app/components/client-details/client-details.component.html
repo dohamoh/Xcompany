@@ -1,7 +1,14 @@
-<section class=" container h-100">
-  <div
-    class="bg-danger row col-12 h-100">
-
-
+<section class="bg-light container h-auto">
+  <div class="row col-12 h-100" *ngFor="let item of clientData.clientServices let i = index">
+    <!-- <div class="line" [style.transform]="lineTransform"></div> -->
+    <div class="col-12 justify-content-center d-flex mt-3">
+      <h2 class="fw-semibold">{{item.name}}</h2>
+    </div>
+    <div class="col-md-6 col-12 d-flex justify-content-center align-items-center my-4">
+      <img class="w-50" src="{{item.imagesUrls[i]}}" alt="">
+    </div>
+    <div class="col-md-6 col-12 d-flex justify-content-center align-items-center my-4">
+      <img class="w-50" src="{{item.imagesUrls[i+1]}}" alt="">
+    </div>
   </div>
 </section>

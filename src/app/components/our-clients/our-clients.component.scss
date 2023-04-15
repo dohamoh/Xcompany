@@ -1,8 +1,7 @@
-// section {
+section {
 //   .mainDiv {
 //     bottom: 7rem;
 //     position: relative;
-
 //     .logos {
 //       background-position: center;
 //       background-size: contain;
@@ -28,7 +27,7 @@
 // }
 // .h-0{
 //   height: 0rem !important;
-// }
+
 .logo {
   background-position: center;
   background-size: contain;
@@ -38,10 +37,10 @@
 .details{
   height: 80vh !important;
   transition: 1s !important;
-
 }
 .close{
   transition: 1s !important;
-
   height: 0vh !important;
 }
+}
+
