@@ -26,7 +26,6 @@ export class OurClientsComponent implements OnInit {
   constructor(private SharedService: SharedService) {}
   ngOnInit(): void {
     this.SharedService.currentClients.subscribe((data: any) => {
-      console.log(data);
       this.dataArr = data;
     });
   }

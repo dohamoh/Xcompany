@@ -25,7 +25,7 @@ export class OurServicesComponent {
   ngOnInit(): void {
     this.SharedService.currentServices.subscribe((data: any) => {
       this.allServices = data;
-      console.log(data);
+
 
       setTimeout(() => {
         this.reveal();
@@ -115,9 +115,9 @@ export class OurServicesComponent {
     }
   }
 addToCart(id:any){
-  console.log(id);
+
   this.ReqsService.addToCart(id).subscribe((data:any)=>{
-    console.log(data);
+
 
     if (data.message == 'added') {
 this.SharedService.updateUserData()

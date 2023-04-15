@@ -4,19 +4,19 @@
     <div class="row m-0">
       <form [formGroup]="servicesForm" class=" col-12 row m-0 mb-3">
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+        <div class="col-12 col-sm-6 col-lg-3 my-2">
           <input type="text" class="w-100 border-0 border-bottom  p-2 " formControlName="servicesName"
             placeholder="Services name">
         </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+        <div class="col-12 col-sm-6 col-lg-3 my-2">
           <input type="text" class="w-100 border-0 border-bottom  p-2 " formControlName="servicesDescription"
             placeholder="Services description">
         </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+        <div class="col-12 col-sm-6 col-lg-3 my-2">
           <input type="text" class="w-100 border-0 border-bottom  p-2 " formControlName="servicesBrief"
             placeholder="Services brief">
         </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+        <div class="col-12 col-sm-6 col-lg-3 my-2">
           <input type="number" class="w-100 border-0 border-bottom  p-2 " formControlName="servicesPrice"
             placeholder="Services price">
         </div>
@@ -26,11 +26,11 @@
       </form>
       <div class="col-12 row m-0 p-0 my-3 ">
         <div class=" col-12 row m-0">
-          <label for="numP" class=" mx-3">pointes Number</label>
-          <input type="number" min="1" max="20"  id="numP" class=" col-2 mx-4" placeholder="pointes Number" (keyup)="handelPointesForm($event)" (change)="handelPointesForm($event)">
+          <!-- <label for="numP" class=" mx-3">pointes Number</label> -->
+          <input type="number" min="1" max="20"  id="numP" class=" col-lg-2 col-md-5 col-7 mx-4 border-0 border-bottom  p-2 " placeholder="pointes Number" (keyup)="handelPointesForm($event)" (change)="handelPointesForm($event)">
         </div>
         <form [formGroup]="pointesForm" class=" col-12 row m-0" >
-          <div class=" col-3 p-3" *ngFor="let dummy of ' '.repeat(pointesNum).split(''), let i = index">
+          <div class=" col-lg-3 col-md-6 col-12 p-3" *ngFor="let dummy of ' '.repeat(pointesNum).split(''), let i = index">
             <input type="text" class="w-100 border-0 border-bottom  p-2 my-2" formControlName="title{{i+1}}"  placeholder="Point {{i+1}} title ">
             <input type="text" class="w-100 border-0 border-bottom  p-2 my-2" formControlName="description{{i+1}}" placeholder="Point {{i+1}} description ">
           </div>
@@ -40,9 +40,9 @@
 
 
       <div class="col-12 d-flex justify-content-between mt-3">
-        <div class="col-lg-2 col-md-3 col-5">
+        <div class="col-lg-2 col-md-3 col-3">
           <input type="file" class="d-none" id="servImgs" (change)="upload($event)">
-          <label for="servImgs" class="btn btn-main box-shadow"><i class="bi bi-images"></i></label>
+          <label for="servImgs" class="btn btn-main box-shadow w-100"><i class="bi bi-images"></i></label>
         </div>
         <div class="col-lg-2 col-md-3 col-5">
           <!-- [disabled]="servicesForm.invalid && pointesForm.invalid" -->

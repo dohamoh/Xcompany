@@ -14,7 +14,7 @@ export class IsAdminGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-      if (localStorage.getItem('role') == 'Admin') {
+      if (localStorage.getItem('role') == 'Admin'||localStorage.getItem('role') == 'Super admin') {
         return true
       }
       this.router.navigate(['/home'])

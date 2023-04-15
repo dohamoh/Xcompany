@@ -35,6 +35,8 @@ export class SharedService {
       this.ReqsService.getUserRole(localStorage.getItem('userToken')).subscribe(
         (data: any) => {
           if (data.user) {
+
+
             localStorage.setItem('role', data.user.role);
             this.userData.next(data.user);
           }
@@ -72,7 +74,6 @@ export class SharedService {
   switchCartValue() {
 
       this.cart.next(!this.cart.value);
-      console.log(this.cart.value);
 
 
   }
