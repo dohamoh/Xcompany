@@ -39,12 +39,10 @@ export class ReqsService {
   addClient(data: any): any {
     return this.HttpClient.post(`${this.baseUrl}/client/addClient`, data);
   }
-
-  // -------___________-------
-  // clients
   getAllClients(): any {
     return this.HttpClient.get(`${this.baseUrl}/client/getAllClients`);
   }
+
 
   // -------___________-------
 
@@ -109,21 +107,17 @@ addAdmin(data:any): any {
     });
   }
 
+
+
+  // orders
+  addOrder(data:any): any {
+    return this.HttpClient.post(`${this.baseUrl}/orders/addOrder`, data, {
+      headers: {
+        authorization: `Bearer__${localStorage.getItem('userToken')}`,
+      },
+    });
+  }
 }
-
-    // ----------_____________----------
-
-
-    // -------___________-------
-    // clients
-
-
-
-        // -------___________-------
-
-// user
-
-
 // , {
 //   headers: {
 //     authorization: `Bearer_${localStorage.getItem('userToken')}`,

@@ -16,6 +16,7 @@ export class OurServicesComponent {
   price: any;
   id: any;
   file: any;
+  role:any
   loading: Boolean = false;
   editLoading: Boolean = false;
   constructor(
@@ -25,7 +26,7 @@ export class OurServicesComponent {
   ngOnInit(): void {
     this.SharedService.currentServices.subscribe((data: any) => {
       this.allServices = data;
-
+this.role = localStorage.getItem('role')
 
       setTimeout(() => {
         this.reveal();
@@ -40,7 +41,7 @@ export class OurServicesComponent {
     for (var i = 0; i < elements.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = elements[i].getBoundingClientRect().top;
-      var elementVisible = 110;
+      var elementVisible = 10;
       if (elementTop < windowHeight - elementVisible) {
         elements[i]?.classList.add('descDef');
         imgs[i]?.classList.add('imgAni');

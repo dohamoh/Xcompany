@@ -75,13 +75,8 @@ export class SharedService {
   }
 
   switchCartValue() {
-
       this.cart.next(!this.cart.value);
-
-
   }
-
-
   updateAllData() {
     this.updateUserData()
     this.updateClients()

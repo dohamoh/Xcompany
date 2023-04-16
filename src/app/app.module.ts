@@ -28,6 +28,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { PaymentssComponent } from './paymentss/paymentss.component';
 import { StripeModule } from 'stripe-angular';
 
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +51,8 @@ import { StripeModule } from 'stripe-angular';
     ServicesDetailsComponent,
     AddClientComponent,
     CartComponent,
-    PaymentssComponent
+    PaymentssComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +62,7 @@ import { StripeModule } from 'stripe-angular';
     FormsModule,
     NgMultiSelectDropDownModule.forRoot(),
     StripeModule.forRoot(""),
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

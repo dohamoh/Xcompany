@@ -4,7 +4,7 @@
       <div class="row cursor-pointer">
         <div class="col-12  d-flex  mt-5"
           [ngClass]="i%2 ==0?'justify-content-end':'justify-content-start'" data-aos="fade-down">
-          <div class=" col-6 row">
+          <div class=" col-lg-6 col-md-8 col-12 row">
             <div class="col-12 text-capitalize" [ngClass]="i%2 ==0?'text-end':'text-start'">
               <h3 class="fw-semibold fs-2">{{item.clientName}}</h3>
             </div>
@@ -17,7 +17,11 @@
           </div>
 
         </div>
-        <div *ngIf="i == openNum " id="details{{i}}" class="close"><app-client-details [clientData]="item"></app-client-details></div>
+
+        <div *ngIf="i == openNum " id="details{{i}}" class="close">
+          <app-client-details [clientData]="item"></app-client-details>
+        </div>
+
       </div>
     </div>
   </div>

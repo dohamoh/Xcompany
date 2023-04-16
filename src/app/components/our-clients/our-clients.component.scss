@@ -35,12 +35,14 @@ section {
   height: 20rem;
 }
 .details{
-  height: 80vh !important;
+  height: auto !important;
   transition: 1s !important;
 }
 .close{
   transition: 1s !important;
   height: 0vh !important;
+  overflow: hidden;
+
 }
 }
 
