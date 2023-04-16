@@ -13,26 +13,48 @@ section {
     background-repeat: no-repeat;
     background-size: 100%;
   }
+  @media screen and (max-width: 600px) {
+    &::before {
+      content: "";
+      position: absolute;
+      display: none;
+      bottom: 0px;
+      left: 20px;
+      width: 0rem;
+      height: 0rem;
+      background-image: url(../../../assets/images/svgs/2-removebg-preview.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
 
   .main {
     box-shadow: 10px 10px 20px 5px rgba(50, 44, 44, 0.537);
 
     animation: fadeInDown;
     animation-duration: 1.5s;
+
     @media screen and (min-width: 1600px) {
       bottom: 850px;
     }
-    @media screen and (max-width: 1600px) and (min-width:1000px) {
-      bottom: 650px;
+
+    @media screen and (max-width: 1600px) and (min-width:1300px) {
+      bottom: 750px;
     }
-    @media screen and (max-width: 1000px) and (min-width:992px) {
-      bottom: 500px;
+
+    @media screen and (max-width: 1300px) and (min-width:992px) {
+      bottom: 600px;
     }
+
     @media screen and (max-width: 992px) {
       bottom: 450px;
     }
 
     @media screen and (max-width: 768px) {
+      bottom: 350px;
+    }
+
+    @media screen and (max-width: 600px) {
       bottom: 350px;
     }
   }
@@ -56,10 +78,12 @@ section {
       transform: scale(1);
     }
   }
+
   svg {
     width: 35% !important;
     // animation: blob 3s ease-in-out infinite;
   }
+
   form {
     button {
       background-color: orange;

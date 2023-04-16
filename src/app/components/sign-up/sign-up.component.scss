@@ -1,7 +1,8 @@
-section{
+section {
   height: 90vh;
   overflow: hidden;
-    &::before{
+
+  &::before {
     content: "";
     position: absolute;
     bottom: 0px;
@@ -12,45 +13,81 @@ section{
     background-repeat: no-repeat;
     background-size: 100%;
   }
-  .main{
-    box-shadow: 10px 10px 20px 5px rgba(50, 44, 44, 0.537);
 
+  @media screen and (max-width: 600px) {
+    &::before {
+      content: "";
+      position: absolute;
+      display: none;
+      bottom: 0px;
+      left: 20px;
+      width: 0rem;
+      height: 0rem;
+      background-image: url(../../../assets/images/svgs/2-removebg-preview.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+
+  .main {
+    box-shadow: 10px 10px 20px 5px rgba(50, 44, 44, 0.537);
     // bottom: 650px;
     animation: fadeInDown;
     animation-duration: 2s;
+
     @media screen and (min-width: 1600px) {
-    bottom: 1000px;
+      bottom: 1000px;
     }
+
     @media screen and (max-width: 1600px) and (min-width:1300px) {
-    bottom: 750px;
+      bottom: 750px;
     }
-    @media screen and (max-width: 1300px) {
-    bottom: 500px;
+
+    @media screen and (max-width: 1300px) and (min-width: 992px) {
+      bottom: 600px;
     }
+
     @media screen and (max-width: 992px) {
-    bottom: 450px;
+      bottom: 500px;
     }
+
     @media screen and (max-width: 768px) {
-    bottom: 350px;
+      bottom: 450px;
+    }
+
+    @media screen and (max-width: 600px) {
+      bottom: 350px;
     }
   }
-  .signUpErrs{
-    p{
+
+  .signUpErrs {
+    p {
       color: rgb(137, 0, 0);
     }
   }
+
   @keyframes blob {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.2);
+    }
+
+    100% {
+      transform: scale(1);
+    }
   }
+
   svg {
-    width: 40% !important;;
+    width: 40% !important;
+    ;
   }
-  form{
-    button{
+
+  form {
+    button {
       background-color: orange;
     }
   }
 }
-

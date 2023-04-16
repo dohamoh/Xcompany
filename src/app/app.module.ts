@@ -25,6 +25,8 @@ import { ServicesDetailsComponent } from './components/services-details/services
 import { AddClientComponent } from './components/add-client/add-client.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { CartComponent } from './components/cart/cart.component';
+import { PaymentssComponent } from './paymentss/paymentss.component';
+import { StripeModule } from 'stripe-angular';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { CartComponent } from './components/cart/cart.component';
     LoadingComponent,
     ServicesDetailsComponent,
     AddClientComponent,
-    CartComponent
+    CartComponent,
+    PaymentssComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import { CartComponent } from './components/cart/cart.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    NgMultiSelectDropDownModule.forRoot()
+    NgMultiSelectDropDownModule.forRoot(),
+    StripeModule.forRoot(""),
   ],
   providers: [],
   bootstrap: [AppComponent]

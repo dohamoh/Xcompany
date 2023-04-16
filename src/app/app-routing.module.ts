@@ -12,6 +12,7 @@ import { LoggedInGuard } from './services/logged-in.guard';
 import { LoggedOutGuard } from './services/logged-out.guard';
 import { IsAdminGuard } from './services/is-admin.guard';
 import { CartComponent } from './components/cart/cart.component';
+import { PaymentssComponent } from './paymentss/paymentss.component';
 
 const routes: Routes = [
   {path:'',redirectTo:"home",pathMatch:'full'},
@@ -23,7 +24,9 @@ const routes: Routes = [
   {path: 'logIn', component:LogInComponent},
   {path: 'admin',canActivate:[IsAdminGuard] , component:AdminComponent},
   {path: 'clientDetails', component:ClientDetailsComponent},
-  {path: 'cart', component:CartComponent}
+  {path: 'cart', component:CartComponent},
+  {path: 'payments', component:PaymentssComponent}
+
 ];
 
 @NgModule({
