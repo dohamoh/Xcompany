@@ -58,7 +58,7 @@ import { StripeModule } from 'stripe-angular';
     HttpClientModule,
     FormsModule,
     NgMultiSelectDropDownModule.forRoot(),
-    StripeModule.forRoot(""),
+    StripeModule.forRoot("pk_test_51MxafiDlUdQmc698VQdKpvuamiY2xVoxKxhSnFad3hsxaBVSzZzGemOqvfUvnLQfp0HdPsNRBSrLUdeGDKCwDtSv0019vVzzac"),
   ],
   providers: [],
   bootstrap: [AppComponent]
