@@ -56,4 +56,20 @@ export class CartComponent {
       }
     });
   }
+  checkOut() {
+    let userId = this.userData._id
+    let cart = this.userData.cartSchema
+    for (let i = 0; i < cart.length; i++) {
+      const element = cart[i];
+      console.log(element);
+      let data = {
+        clientId: userId,
+        service: element.productId?._id
+      }
+      this.ReqsService.addOrder(data).subscribe((data: any) => {
+        console.log(data);
+      })
+    }
+
+  }
 }

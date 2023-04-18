@@ -1,0 +1,64 @@
+<!-- <section class="my-5">
+  <div class="container">
+    <div class="row">
+      <div class="card  col-md-6 col-12">
+        <p class="h8 py-3">Payment Details</p>
+
+        <div class="d-flex flex-column">
+          <p class="text mb-1">Person Name</p>
+          <input class="form-control mb-3" name="customerName" formControlName="customerName" type="text"
+            placeholder="Name" value="Barry Allen">
+        </div>
+
+        <div class="d-flex flex-column">
+          <p class="text mb-1">Card Number</p>
+          <input class="form-control mb-3" name="cardNumber" formControlName="cardNumber" type="number"
+            placeholder="1234 5678 435678">
+        </div>
+
+        <div class="d-flex flex-column">
+          <p class="text mb-1">Expiry</p>
+          <input class="form-control mb-3" name="expiry" formControlName="expiry" type="text" placeholder="MM/YYYY">
+        </div>
+
+        <div class="d-flex flex-column">
+          <p class="text mb-1">CVV/CVC</p>
+          <input class="form-control mb-3 pt-2 " name="CVC" formControlName="CVC" type="password" placeholder="***">
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-3">
+          <span class="ps-3 fw-semibold">Continue Payment</span>
+          <span><i class="bi bi-arrow-right"></i></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="px-4">
+  <h2 class="mt-3 mb-5 text-center fw-semibold">the services in your cart</h2>
+  <!-- <app-cart></app-cart> -->
+  <div class="container">
+    <div class="row bg-light mb-4" *ngFor="let item of userData.cartSchema">
+      <div #item class=" box-shadow p-4">
+        <div class="col-12 img d-flex  justify-content-end"
+          style="background-image: url({{item.productId.image}});">
+          <i class="bi bi-trash-fill fs-4 cursor-pointer text-danger" (click)="removeFromCart(item._id)"></i>
+        </div>
+        <div class="col-12">
+          <p class="fs-3">{{item.productId.servicesName}}</p>
+          <p class="main-color2 fs-4">{{item.productId.servicesPrice}}$</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-end">
+      <div class=" col-md-6 d-flex align-items-center justify-content-between">
+        <h2>total: </h2>
+        <h2>{{total}}$</h2>
+      </div>
+    </div>
+    <button class="btn btn-main mt-5" (click)="makePayment(total)">proceed payment</button>
+  </div>
+
+</section>

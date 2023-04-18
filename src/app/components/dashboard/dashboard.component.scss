@@ -1,0 +1,189 @@
+section {
+
+  .cardBox {
+    .cards {
+      &:hover {
+        background: linear-gradient(to left top, #fcd51a, #00a0e1);
+
+        .numbers {
+          position: relative;
+          font-weight: 500;
+          font-size: 2.5rem;
+          color: #fcd51a;
+        }
+
+        .cardName {
+          color: rgb(255, 255, 255);
+          font-size: 1.1rem;
+          margin-top: 5px;
+        }
+
+        i {
+          font-size: 3.5rem;
+          color: rgb(255, 255, 255);
+        }
+      }
+
+      background-color: rgb(248, 248, 248);
+      cursor: pointer;
+
+      .numbers {
+        position: relative;
+        font-weight: 500;
+        font-size: 2.5rem;
+        color: #fcd51a;
+      }
+
+      .cardName {
+        color: black;
+        font-size: 1.1rem;
+        margin-top: 5px;
+      }
+
+      i {
+        font-size: 3.5rem;
+        color: rgb(146, 146, 146);
+      }
+    }
+  }
+
+
+
+  /* ================== Order Details List ============== */
+
+
+  .details {
+    .recentOrders {
+      position: relative;
+
+      height: 500px;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+      border-radius: 20px;
+
+      table {
+        width: 100%;
+        tr {
+          color: black;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+          :last-child {
+            border-bottom: none;
+          }
+
+          &:hover {
+            background: #004b68;
+
+            color: white;
+          }
+
+          td {
+            padding: 10px;
+
+            &:last-child {
+              text-align: end;
+            }
+
+            &:nth-child(2) {
+              text-align: end;
+            }
+
+            &:nth-child(3) {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+    .recentCustomers {
+      position: relative;
+      height: 500px;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+      border-radius: 20px;
+      table{
+        width: 100%;
+        tr {
+          td {
+            padding: 12px 10px;
+            h4 {
+              font-size: 16px;
+              font-weight: 500;
+              line-height: 1.2rem;
+              span {
+                font-size: 14px;
+                color: black
+              }
+            }
+          }
+          &:hover {
+            background: #004b68;
+            color: white
+          }
+          &:hover td h4 span {
+            color: wheat;
+          }
+        }
+      }
+    }
+    .cardHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      h2 {
+        font-weight: 600;
+        color: #00a0e1;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        thead {
+          td {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+
+    .status.delivered {
+      padding: 2px 4px;
+      background: #8de02c;
+      color: white;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .status.pending {
+      padding: 2px 4px;
+      background: #e9b10a;
+      color: var(--white);
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .status.return {
+      padding: 2px 4px;
+      background: #f00;
+      color: var(--white);
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .status.inProgress {
+      padding: 2px 4px;
+      background: #1795ce;
+      color: var(--white);
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+  }
+}

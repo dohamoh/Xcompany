@@ -56,6 +56,18 @@ export class SharedService {
       );
     }
   }
+  // payment() {
+  //   if (localStorage.getItem('userToken')) {
+  //     this.ReqsService.processPayment(localStorage.getItem('userToken')).subscribe(
+  //       (data: any) => {
+  //         if (data.user) {
+  //           localStorage.setItem('role', data.user.role);
+  //           this.userData.next(data.user);
+  //         }
+  //       }
+  //     )
+  //   }
+  // }
   isLoggedInFun() {
     if (localStorage.getItem('userToken')) {
       this.LoggedIn.next(true);
@@ -73,15 +85,9 @@ export class SharedService {
       this.clients.next(data.allClients);
     });
   }
-
   switchCartValue() {
-
-      this.cart.next(!this.cart.value);
-
-
+    this.cart.next(!this.cart.value);
   }
-
-
   updateAllData() {
     this.updateUserData()
     this.updateClients()

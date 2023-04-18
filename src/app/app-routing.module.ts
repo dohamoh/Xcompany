@@ -12,7 +12,7 @@ import { LoggedInGuard } from './services/logged-in.guard';
 import { LoggedOutGuard } from './services/logged-out.guard';
 import { IsAdminGuard } from './services/is-admin.guard';
 import { CartComponent } from './components/cart/cart.component';
-import { PaymentssComponent } from './paymentss/paymentss.component';
+import { PaymentssComponent } from './components/paymentss/paymentss.component';
 
 const routes: Routes = [
   {path:'',redirectTo:"home",pathMatch:'full'},

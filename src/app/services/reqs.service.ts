@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -34,14 +35,17 @@ export class ReqsService {
   getUserRole(token: any): any {
     return this.HttpClient.get(`${this.baseUrl}/auth/getUserRole/${token}`);
   }
+  //___________----------------______________
+  //payment
+  processPayment(stripeToken:any , amount:any): Observable<any> {
+    return this.HttpClient.post<any>(`${this.baseUrl}/payment/proceedPayment`, {token:stripeToken , amount});
+  }
+  //____________-----------------____________
   // client
 
   addClient(data: any): any {
     return this.HttpClient.post(`${this.baseUrl}/client/addClient`, data);
   }
-
-  // -------___________-------
-  // clients
   getAllClients(): any {
     return this.HttpClient.get(`${this.baseUrl}/client/getAllClients`);
   }
@@ -86,7 +90,6 @@ export class ReqsService {
     });
   }
 
-
 addAdmin(data:any): any {
     return this.HttpClient.put(`${this.baseUrl}/user/addAdmin`, data, {
       headers: {
@@ -108,22 +111,15 @@ addAdmin(data:any): any {
       },
     });
   }
-
+  // orders
+  addOrder(data:any): any {
+    return this.HttpClient.post(`${this.baseUrl}/orders/addOrder`, data, {
+      headers: {
+        authorization: `Bearer__${localStorage.getItem('userToken')}`,
+      },
+    });
+  }
 }
-
-    // ----------_____________----------
-
-
-    // -------___________-------
-    // clients
-
-
-
-        // -------___________-------
-
-// user
-
-
 // , {
 //   headers: {
 //     authorization: `Bearer_${localStorage.getItem('userToken')}`,

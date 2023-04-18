@@ -25,8 +25,11 @@ import { ServicesDetailsComponent } from './components/services-details/services
 import { AddClientComponent } from './components/add-client/add-client.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { CartComponent } from './components/cart/cart.component';
-import { PaymentssComponent } from './paymentss/paymentss.component';
+import { PaymentssComponent } from './components/paymentss/paymentss.component';
 import { StripeModule } from 'stripe-angular';
+
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,8 @@ import { StripeModule } from 'stripe-angular';
     ServicesDetailsComponent,
     AddClientComponent,
     CartComponent,
-    PaymentssComponent
+    PaymentssComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +63,7 @@ import { StripeModule } from 'stripe-angular';
     FormsModule,
     NgMultiSelectDropDownModule.forRoot(),
     StripeModule.forRoot("pk_test_51MxafiDlUdQmc698VQdKpvuamiY2xVoxKxhSnFad3hsxaBVSzZzGemOqvfUvnLQfp0HdPsNRBSrLUdeGDKCwDtSv0019vVzzac"),
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
