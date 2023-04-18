@@ -1,8 +1,14 @@
 footer {
-  position: relative;
-  top: 3rem;
+  // position: relative;
+  // top: 3rem;
+  overflow: hidden !important;
   background: linear-gradient(180deg, #85c9f9, #03678f, #023143);
-
+  @media screen and (max-width:992px) and (min-width:767px) {
+    margin-top: 28rem !important;
+  }
+  @media screen and (max-width:767px) and (min-width:300px) {
+    margin-top: 28rem !important;
+  }
   .bgLogo {
     width: 20rem;
     height: 13rem;
@@ -25,10 +31,7 @@ footer {
     transition: 1s;
     &:hover {
       background: linear-gradient(to left , #fcd51a  , #b4d401);
-      // background-color: #fcd51a !important;
       transition: 1s !important;
     }
   }
 }
-
-// background: linear-gradient(to top, #00a5e5, #fbd31a, #cfb733, #a7b93d);

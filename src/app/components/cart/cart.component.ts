@@ -12,8 +12,8 @@ export class CartComponent {
   userData: any;
   total: any;
   paymentHandler: any = null;
-  success:boolean = false;
-  failure:boolean = false;
+  success: boolean = false;
+  failure: boolean = false;
 
   constructor(
     private SharedService: SharedService,
@@ -64,16 +64,16 @@ export class CartComponent {
   checkOut() {
     let userId = this.userData._id
     let cart = this.userData.cartSchema
-for (let i = 0; i < cart.length; i++) {
-  const element = cart[i];
+    for (let i = 0; i < cart.length; i++) {
+      const element = cart[i];
 
-  let data={
-    clientId:userId,
-    service:element.productId?._id
-  }
-this.ReqsService.addOrder(data).subscribe((data:any)=>{
-})
-}
+      let data = {
+        clientId: userId,
+        service: element.productId?._id
+      }
+      this.ReqsService.addOrder(data).subscribe((data: any) => {
+      })
+    }
 
   }
   makePayment(amount: number) {
@@ -83,11 +83,11 @@ this.ReqsService.addOrder(data).subscribe((data:any)=>{
       token: function (stripeToken: any) {
         console.log({ stripeToken })
         let email = stripeToken.stripeToken
-        paymentStripe(stripeToken , email)
+        paymentStripe(stripeToken, email)
       }
     });
-    const paymentStripe = (stripeToken:any , email:any) => {
-      this.ReqsService.processPayment(stripeToken,(this.total*100),email).subscribe((data:any) => {
+    const paymentStripe = (stripeToken: any, email: any) => {
+      this.ReqsService.processPayment(stripeToken, (this.total * 100), email).subscribe((data: any) => {
         console.log(data);
         if (data.data == "success") {
           this.checkOut()

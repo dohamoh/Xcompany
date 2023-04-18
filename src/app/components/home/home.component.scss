@@ -1,13 +1,27 @@
 section {
   header {
+    overflow: hidden !important;
     .custom-shape {
       clip-path: url(#custom);
       z-index: 3;
       right: 5%;
       top: -5%;
-      display: none;
-  @media screen and (max-width:600px) and (min-width:400px) {
-  }
+
+      // display: none;
+      @media screen and (max-width:2000px) and (min-width:992px) {
+        width: 900px !important;
+        right: -5% !important;
+      }
+
+      @media screen and (max-width:992px) and (min-width:767px) {
+        width: 850px !important;
+        right: 9% !important;
+        // display: none !important;
+      }
+
+      @media screen and (max-width:767px) and (min-width:300px) {
+        display: none !important;
+      }
     }
 
     .mainText {
@@ -60,6 +74,8 @@ section {
 
   #homeBody {
     .section1 {
+      overflow: hidden !important;
+
       .bgImg1 {
         background-image: url(../../../assets/images/homeImage1.png);
         background-size: cover;
@@ -84,6 +100,8 @@ section {
     }
 
     .section2 {
+      overflow: hidden !important;
+
       h3 {
         font: 2.5rem;
         line-height: 1.6;
@@ -117,6 +135,8 @@ section {
     }
 
     .section3 {
+      overflow: hidden !important;
+
       h1 {
         font-size: 8rem;
         letter-spacing: 1rem;
@@ -210,13 +230,14 @@ section {
         height: 14rem;
         width: 20rem !important;
       }
-      .imgsec4{
+
+      .imgsec4 {
         background-image: url(../../../assets/images/download.jpg);
 
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-margin: 20px 0;
+        margin: 20px 0;
 
         border-radius: 2rem;
         height: 40vh;
@@ -251,32 +272,39 @@ margin: 20px 0;
     }
   }
 }
-@media screen and (max-width:2000px) and (min-width:1000px) {
-  header{
+
+@media screen and (max-width:2000px) and (min-width:992px) {
+  header {
     margin-bottom: 200px !important;
   }
-  #homeBody section{
-margin-bottom: 200px !important;
+
+  #homeBody section {
+    margin-bottom: 200px !important;
   }
 }
-@media screen and (max-width:1000px) and (min-width:767px) {
-  header{
+
+@media screen and (max-width:992px) and (min-width:767px) {
+  header {
     margin-bottom: 100px !important;
   }
-  #homeBody section{
-margin-bottom: 100px !important;
+
+  #homeBody section {
+    margin-bottom: 100px !important;
   }
-  .section1{
-margin-top: 200px !important;
+
+  .section1 {
+    margin-top: 200px !important;
 
   }
 }
+
 @media screen and (max-width:767px) and (min-width:300px) {
-  header{
+  header {
     margin-bottom: 100px !important;
   }
-  #homeBody section{
-margin-bottom: 100px !important;
+
+  #homeBody section {
+    margin-bottom: 100px !important;
   }
 
 }
