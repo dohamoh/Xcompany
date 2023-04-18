@@ -7,7 +7,7 @@
     <div class=" w-100 h-100">
 
       <ul>
-        <li>
+        <li *ngIf="role == 'Super admin'">
           <i (click)="switch(addUser)" class="bi bi-person-fill-add"></i>
           <p (click)="switch(addUser)" class="tap">Add admin</p>
         </li>
@@ -36,9 +36,9 @@
 
 
   <div class="pages text-black">
-    <div class="page d-none" #addUser> <app-addadmin></app-addadmin></div>
-    <div class="page d-none" #addServ> <app-add-services></app-add-services></div>
+    <div class="page " #addUser *ngIf="role == 'Super admin'"> <app-addadmin></app-addadmin></div>
+    <div class="page " [ngClass]="{'d-none': role == 'Super admin'}" #addServ> <app-add-services></app-add-services></div>
     <div class="page d-none" #add><app-add-client></app-add-client></div>
-    <div class="page " #dash><app-dashboard></app-dashboard></div>
+    <div class="page d-none" #dash><app-dashboard></app-dashboard></div>
   </div>
 </section>
