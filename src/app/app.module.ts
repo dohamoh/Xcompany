@@ -25,7 +25,6 @@ import { ServicesDetailsComponent } from './components/services-details/services
 import { AddClientComponent } from './components/add-client/add-client.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { CartComponent } from './components/cart/cart.component';
-import { PaymentssComponent } from './components/paymentss/paymentss.component';
 import { StripeModule } from 'stripe-angular';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -52,7 +51,6 @@ import { NgChartsModule } from 'ng2-charts';
     ServicesDetailsComponent,
     AddClientComponent,
     CartComponent,
-    PaymentssComponent,
     DashboardComponent
   ],
   imports: [

@@ -13,14 +13,20 @@
   </div>
 </div>
 
-
 <div class="row ">
   <div class=" d-flex align-items-center justify-content-between">
-    <h2>total: </h2>
-    <h2>{{total}}$</h2>
+    <h2 class="fw-bold">total: </h2>
+    <h2>{{total.toFixed(2)}}$</h2>
   </div>
   <button class=" btn btn-light rounded-3 box-shadow mt-3 mb-2" (click)="clearCart()">Clear</button>
-  <button class=" btn btn-main rounded-3 box-shadow" routerLink="/payments">Check out</button>
-  <!-- (click)="checkOut()" -->
+  <button class=" btn btn-main rounded-3 box-shadow" (click)="makePayment(total)">Check out</button>
+</div>
+<div class="col-12">
+  <div *ngIf="success">
+    <h1 class="text-success">Your Payment Is Done Successfully</h1>
+  </div>
+  <div *ngIf="failure">
+    <h1 class="text-danger">Your Payment Is Not Done ERROR</h1>
+  </div>
 </div>
 </section>

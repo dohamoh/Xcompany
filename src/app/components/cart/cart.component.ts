@@ -11,6 +11,10 @@ export class CartComponent {
   style: any;
   userData: any;
   total: any;
+  paymentHandler: any = null;
+  success:boolean = false;
+  failure:boolean = false;
+
   constructor(
     private SharedService: SharedService,
     private ReqsService: ReqsService
@@ -24,6 +28,7 @@ export class CartComponent {
       this.userData = data;
       this.subTotal();
     });
+    this.invokeStripe()
   }
   close() {
     this.SharedService.switchCartValue();
@@ -36,7 +41,7 @@ export class CartComponent {
 
       total += element;
     }
-    this.total = total;
+    this.total = total
   }
   removeFromCart(id: any) {
     this.ReqsService.removeFromCart(id).subscribe((data: any) => {
@@ -71,5 +76,51 @@ export class CartComponent {
       })
     }
 
+  }
+  makePayment(amount: number) {
+    const paymentHandler = (<any>window).StripeCheckout.configure({
+      key: 'pk_test_51MxafiDlUdQmc698VQdKpvuamiY2xVoxKxhSnFad3hsxaBVSzZzGemOqvfUvnLQfp0HdPsNRBSrLUdeGDKCwDtSv0019vVzzac',
+      locale: 'auto',
+      token: function (stripeToken: any) {
+        console.log({ stripeToken })
+        let email = stripeToken.stripeToken
+        paymentStripe(stripeToken , email)
+      }
+    });
+    const paymentStripe = (stripeToken:any , email:any) => {
+      this.ReqsService.processPayment(stripeToken,(this.total*100),email).subscribe((data:any) => {
+        console.log(data);
+        if (data.data == "success") {
+          this.checkOut()
+          this.success = true
+        } else {
+          this.failure = true
+        }
+      })
+    }
+    paymentHandler.open({
+      name: 'velocity services',
+      description: 'buying a service',
+      amount: amount * 100
+    });
+  }
+  invokeStripe() {
+    if (!window.document.getElementById('stripe-script')) {
+      const script = window.document.createElement("script");
+      script.id = "stripe-script";
+      script.type = "text/javascript";
+      script.src = "https://checkout.stripe.com/checkout.js";
+      script.onload = () => {
+        this.paymentHandler = (<any>window).StripeCheckout.configure({
+          key: 'pk_test_51MxafiDlUdQmc698VQdKpvuamiY2xVoxKxhSnFad3hsxaBVSzZzGemOqvfUvnLQfp0HdPsNRBSrLUdeGDKCwDtSv0019vVzzac',
+          locale: 'auto',
+          token: function (stripeToken: any) {
+            console.log(stripeToken)
+            alert('Payment has been successfull!');
+          }
+        });
+      }
+      window.document.body.appendChild(script);
+    }
   }
 }

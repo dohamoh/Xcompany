@@ -37,19 +37,18 @@ export class ReqsService {
   }
   //___________----------------______________
   //payment
-  processPayment(stripeToken:any , amount:any): Observable<any> {
-    return this.HttpClient.post<any>(`${this.baseUrl}/payment/proceedPayment`, {token:stripeToken , amount});
+  // /${authToken}  , authToken:any
+  processPayment(stripeToken:any , amount:any , email:any): Observable<any> {
+    return this.HttpClient.post(`${this.baseUrl}/payment/proceedPayment`, {token:stripeToken , amount , email});
   }
   //____________-----------------____________
   // client
-
   addClient(data: any): any {
     return this.HttpClient.post(`${this.baseUrl}/client/addClient`, data);
   }
   getAllClients(): any {
     return this.HttpClient.get(`${this.baseUrl}/client/getAllClients`);
   }
-
   // -------___________-------
 
   // user

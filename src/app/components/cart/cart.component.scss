@@ -8,10 +8,10 @@ section {
   right: 0;
   z-index: 6;
 
-  p{
-
+  p {
     white-space: nowrap !important;
-}
+  }
+
   .img {
     height: 100px;
     background-position: center left;
@@ -28,47 +28,51 @@ section {
 
 @media screen and (max-width: 1600px) and (min-width:1000px) {
   .open {
-    width: 20%;
-    right:0;
+    width: 40%;
+    right: 0;
   }
 }
 
 @media screen and (max-width: 1000px) and (min-width:992px) {
   .open {
-    width: 30%;
-    right:0;
+    width: 50%;
+    right: 0;
   }
 }
 
 @media screen and (max-width: 992px) and (min-width:768px) {
   .open {
-    width: 40%;
-    right:0;
+    width: 60%;
+    right: 0;
   }
 }
 
 @media screen and (max-width: 768px) and (min-width:500px) {
   .open {
-    width: 50%;
-    right:0;
+    width: 70%;
+    right: 0;
   }
 }
+
 @media screen and (max-width: 500px) {
   .open {
-    width: 80%;
-    right:0;
+    width: 90%;
+    right: 0;
   }
 }
 
 .close {
-  right:-150% !important;
+  right: -150% !important;
 
   // padding: 0 !important;
 }
-.item{width: 100% !important;
+
+.item {
+  width: 100% !important;
 
 }
-.closeItem{
+
+.closeItem {
   width: 0 !important;
   padding: 0 !important;
   overflow: hidden;
