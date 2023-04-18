@@ -10,8 +10,11 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent {
   userLoggedIn:any;
+addUser: any;
+role:any
   constructor(private SharedService:SharedService , private router:Router,private ReqsService:ReqsService){}
   ngOnInit(): void {
+    this.role = localStorage.getItem('role')
     this.SharedService.isLoggedIn.subscribe((value) => {
       if (value == true) {
         this.userLoggedIn = true
