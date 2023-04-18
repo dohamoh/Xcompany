@@ -30,6 +30,9 @@ export class SharedService {
   private clients = new BehaviorSubject<any>([]);
   currentClients = this.clients.asObservable();
 
+  private orders = new BehaviorSubject<any>([]);
+  currentOrders = this.orders.asObservable();
+
   private clientServices = new BehaviorSubject<any>([]);
   currentClientServices = this.clientServices.asObservable();
 
@@ -85,6 +88,14 @@ export class SharedService {
       this.clients.next(data.allClients);
     });
   }
+  updateOrders() {
+    this.ReqsService.getAllOrders().subscribe((data: any) => {
+
+
+      this.orders.next(data.allOrders);
+    });
+  }
+
   switchCartValue() {
     this.cart.next(!this.cart.value);
   }
@@ -93,5 +104,6 @@ export class SharedService {
     this.updateClients()
     this.updateServices()
     this.isLoggedInFun()
+    this.updateOrders()
   }
 }

@@ -3,40 +3,64 @@ section {
     .custom-shape {
       clip-path: url(#custom);
       z-index: 3;
-      right: 10%;
-      top: 0%;
+      right: 5%;
+      top: -5%;
+      display: none;
+  @media screen and (max-width:600px) and (min-width:400px) {
+  }
     }
 
     .mainText {
-      position: absolute;
       z-index: 5;
-      top: 25%;
-      left: 15%;
 
       h1 {
-        // background-color: rgb(255, 255, 255);
-        border-radius: 5rem;
         font-size: 3.5rem;
+        white-space: nowrap;
       }
 
       h2 {
-        background-color: rgb(255, 230, 0);
-        border-radius: 5rem;
-        font-size: 2.5rem;
+        white-space: nowrap;
+        font-size: 2.2rem;
       }
 
       .headerBtn:hover {
         background: linear-gradient(to left, #fcd51a, #b4d401) !important;
         font-weight: 600;
       }
+    }
+  }
 
+  @media screen and (max-width:600px) and (min-width:400px) {
+    header {
+      h1 {
+        font-size: 2.5rem !important;
+        white-space: nowrap;
+      }
+
+      h2 {
+        white-space: nowrap;
+        font-size: 1.9rem !important;
+      }
+    }
+  }
+
+  @media screen and (max-width:399px) {
+    header {
+      h1 {
+        font-size: 2rem !important;
+        white-space: nowrap;
+      }
+
+      h2 {
+        white-space: nowrap;
+        font-size: 1.2rem !important;
+      }
     }
   }
 
   #homeBody {
     .section1 {
       .bgImg1 {
-        // position: absolute;
         background-image: url(../../../assets/images/homeImage1.png);
         background-size: cover;
         background-position: center center;
@@ -46,25 +70,16 @@ section {
       }
 
       .bgImg2 {
-        // animation: spin 6s linear infinite;
+        right: -110px;
+        bottom: 0;
         background-image: url(../../../assets/images/shape2.png);
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        transform: translate(-50%, -50%);
         transform-origin: center;
-        // background-attachment: fixed;
-        height: 28rem;
-      }
-
-      h1 {
-        font-size: 3.5rem;
-        top: 0rem;
-      }
-
-      h3 {
-        top: 14rem;
-        left: 13rem;
+        width: 400px;
+        height: 400px;
+        z-index: -1 !important;
       }
     }
 
@@ -77,13 +92,11 @@ section {
       }
 
       .bgImg3 {
-        position: absolute;
+
         background-image: url(../../../assets/images/homeImg3.jpg);
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        right: 5rem;
-        // bottom: 50%;
         border-radius: 2rem;
         height: 14rem;
         width: 20rem !important;
@@ -95,9 +108,8 @@ section {
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        // border: 2px solid red;
-        top: 0rem !important;
-        right: 20rem;
+        top: 50% !important;
+        right: 50%;
         border-radius: 50%;
         height: 14rem;
         width: 14rem !important;
@@ -106,32 +118,35 @@ section {
 
     .section3 {
       h1 {
-        position: absolute;
         font-size: 8rem;
         letter-spacing: 1rem;
-        color: rgb(255, 255, 255);
-        z-index: 6;
-        bottom: -1rem;
-        left: 5rem;
+
+        @media screen and (max-width: 767px) and (min-width: 586px) {
+          font-size: 6rem !important;
+          white-space: nowrap;
+        }
+
+        @media screen and (max-width: 585px) and (min-width: 421px) {
+          font-size: 4rem !important;
+          white-space: nowrap;
+        }
+
+        @media screen and (max-width: 420px) {
+          font-size: 3rem !important;
+          white-space: nowrap;
+        }
       }
 
       h3 {
-        position: absolute;
-        font-size: 1.5rem;
-        line-height: 1.6;
-        top: 3rem;
-        right: 0rem;
-        width: 60%;
+        line-height: 1.3;
         word-spacing: 0.5rem;
       }
 
       .bgImg5 {
-        position: absolute;
         background-image: url(../../../assets/images/aboutusjpg.jpg);
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        left: 5rem;
         border-radius: 2rem;
         height: 14rem;
         width: 20rem !important;
@@ -156,20 +171,25 @@ section {
 
       h1 {
         font-size: 5rem;
-        top: 35rem;
+
+        @media screen and (max-width: 767px) and (min-width: 586px) {
+          font-size: 4rem !important;
+          white-space: nowrap;
+        }
+
+        @media screen and (max-width: 585px) and (min-width: 421px) {
+          font-size: 3rem !important;
+          white-space: nowrap;
+        }
+
+        @media screen and (max-width: 420px) {
+          font-size: 3rem !important;
+          white-space: nowrap;
+        }
       }
 
       h3 {
         font-size: 1.3rem;
-        position: absolute;
-        top: 42rem;
-        line-height: 1.5;
-      }
-
-      h4 {
-        font-size: 1.3rem;
-        position: absolute;
-        top: 50rem;
         line-height: 1.5;
       }
 
@@ -184,11 +204,23 @@ section {
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        top: 40rem;
+        top: 4rem;
         right: 5rem;
         border-radius: 2rem;
         height: 14rem;
         width: 20rem !important;
+      }
+      .imgsec4{
+        background-image: url(../../../assets/images/download.jpg);
+
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+margin: 20px 0;
+
+        border-radius: 2rem;
+        height: 40vh;
+        width: 100% !important;
       }
 
       .bgImg8 {
@@ -197,7 +229,7 @@ section {
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        top: 52rem;
+        top: 13rem;
         right: 0rem;
         border-radius: 2rem;
         height: 10rem;
@@ -210,8 +242,8 @@ section {
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        top: 48rem;
-        right: 8rem;
+        top: 10rem;
+        right: 11rem;
         border-radius: 2rem;
         height: 20rem;
         width: 20rem !important;
@@ -219,272 +251,32 @@ section {
     }
   }
 }
-
-@media screen and (max-width: 1400px) and (min-width: 1200px) {
-  header {
-    .mainText {
-      h1 {
-        width: 90% !important;
-      }
-
-      h2 {
-        width: 100% !important;
-      }
-    }
-
-    img {
-      width: 118% !important;
-    }
+@media screen and (max-width:2000px) and (min-width:1000px) {
+  header{
+    margin-bottom: 200px !important;
   }
-
-  #homeBody {
-    .section1 {
-      margin-top: 6rem !important;
-
-      h1 {
-        top: -3rem !important;
-      }
-    }
-
-    .section3 {
-      margin-top: 5rem !important;
-
-      h1 {
-        width: 90% !important;
-      }
-
-      h3 {
-        top: 2rem !important;
-      }
-
-      .bottomH3 {
-        top: 18rem !important;
-      }
-
-      .bottomH3_2 {
-        top: 32rem !important;
-      }
-    }
-
-    .section4 {
-      h1 {
-        top: 39rem !important;
-      }
-
-      h3 {
-        top: 45rem !important;
-      }
-
-      h4 {
-        margin-top: 4rem;
-      }
-    }
+  #homeBody section{
+margin-bottom: 200px !important;
   }
 }
-
-// ____________---------------------'______________-
-@media screen and (max-width: 1200px) and (min-width: 992px) {
-  header {
-    .mainText {
-      h1 {
-        width: 120% !important;
-      }
-
-      h2 {
-        width: 125% !important;
-      }
-    }
-
-    img {
-      width: 140% !important;
-    }
+@media screen and (max-width:1000px) and (min-width:767px) {
+  header{
+    margin-bottom: 100px !important;
   }
+  #homeBody section{
+margin-bottom: 100px !important;
+  }
+  .section1{
+margin-top: 200px !important;
 
-  #homeBody {
-    // left: 5rem !important;
-
-    .section1 {
-      margin-top: 6rem !important;
-
-      h1 {
-        top: -4rem !important;
-      }
-
-      h3 {
-        left: 4rem !important;
-      }
-    }
-
-    .section2 {
-      .bgImg3 {
-        right: 1rem !important;
-      }
-
-      .bgImg4 {
-        right: 13rem !important;
-      }
-    }
-
-    .section3 {
-      margin-top: 0rem 5rem !important;
-
-      h3 {
-        top: 2rem !important;
-      }
-
-      .bottomH3 {
-        top: 20rem !important;
-      }
-
-      .bottomH3_2 {
-        top: 34rem !important;
-      }
-    }
-
-    .section4 {
-      h1 {
-        left: -3rem !important;
-        top: 43rem !important;
-      }
-
-      h3 {
-        top: 48rem !important;
-      }
-
-      h4 {
-        margin-top: 9rem;
-      }
-
-      .bgImg7 {
-        top: 43rem !important;
-      }
-
-      .bgImg8 {
-        top: 56rem !important;
-      }
-
-      .bgImg9 {
-        top: 52rem !important;
-      }
-    }
   }
 }
-
-// ______________-------------------________________
-@media screen and (max-width: 992px) and (min-width: 768px) {
-  header {
-    .mainText {
-      h1 {
-        width: 65% !important;
-      }
-
-      h2 {
-        width: 65% !important;
-      }
-
-      h3 {
-        width: 50% !important;
-        color: rgb(0, 162, 255) !important;
-      }
-    }
-
-    img {
-      width: 143% !important;
-    }
+@media screen and (max-width:767px) and (min-width:300px) {
+  header{
+    margin-bottom: 100px !important;
+  }
+  #homeBody section{
+margin-bottom: 100px !important;
   }
 
-  #homeBody {
-    left: 5rem !important;
-
-    .section1 {
-      margin-top: 6rem !important;
-
-      h1 {
-        top: 0rem !important;
-        left: 10rem !important;
-        width: 75% !important;
-      }
-
-      h3 {
-        top: 20rem !important;
-        left: -2rem !important;
-      }
-
-      .bgImg1 {
-        left: 0rem !important;
-      }
-      .sss{
-        margin-right: -12rem !important;
-      }
-      .bgImg2Parent {
-        width: 90% !important;
-      }
-    }
-
-    .section2 {
-      h3{
-        bottom: -11rem !important;
-        left: -3rem !important;
-      }
-      .bgImg3 {
-        right: 2rem !important;
-      }
-
-      .bgImg4 {
-        right: 10rem !important;
-      }
-    }
-
-    .section3 {
-      margin: 5rem 0rem !important;
-      left: 0rem !important;
-      position: relative;
-      h1{
-        left: -5rem !important;
-      }
-      h3 {
-        top: 2rem !important;
-        left: 15rem !important;
-      }
-      .bgImg5{
-        left: -6rem !important;
-      }
-      .bottomH3 {
-        top: 30rem !important;
-        left: 0rem !important;
-      }
-
-      .bottomH3_2 {
-        top: 44rem !important;
-        left: 0rem !important;
-      }
-    }
-
-    .section4 {
-      h1 {
-        left: -3rem !important;
-        top: 43rem !important;
-      }
-
-      h3 {
-        top: 48rem !important;
-      }
-
-      h4 {
-        margin-top: 9rem;
-      }
-
-      .bgImg7 {
-        top: 43rem !important;
-      }
-
-      .bgImg8 {
-        top: 56rem !important;
-      }
-
-      .bgImg9 {
-        top: 52rem !important;
-      }
-    }
-  }
 }

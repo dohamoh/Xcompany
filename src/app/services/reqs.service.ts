@@ -7,6 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class ReqsService {
   private baseUrl = 'http://localhost:3000';
+  header={
+    authorization: `Bearer__${localStorage.getItem('userToken')}`,
+  }
   constructor(private HttpClient: HttpClient) {}
   // services
   addServices(data: any): any {
@@ -49,6 +52,9 @@ export class ReqsService {
   getAllClients(): any {
     return this.HttpClient.get(`${this.baseUrl}/client/getAllClients`);
   }
+
+
+
   // -------___________-------
 
   // user
@@ -57,9 +63,7 @@ export class ReqsService {
       id,
     };
     return this.HttpClient.put(`${this.baseUrl}/user/addToCart`, data, {
-      headers: {
-        authorization: `Bearer__${localStorage.getItem('userToken')}`,
-      },
+      headers:this.header
     });
   }
   removeFromCart(id: any): any {
@@ -67,55 +71,57 @@ export class ReqsService {
       id,
     };
     return this.HttpClient.put(`${this.baseUrl}/user/removeFromCart`, data, {
-      headers: {
-        authorization: `Bearer__${localStorage.getItem('userToken')}`,
-      },
+      headers:this.header
     });
   }
   clearCart(): any {
     let token = localStorage.getItem('userToken');
     return this.HttpClient.put(`${this.baseUrl}/user/clearCart`, token, {
-      headers: {
-        authorization: `Bearer__${localStorage.getItem('userToken')}`,
-      },
+      headers:this.header
     });
   }
 
   searchUser(data:any): any {
     return this.HttpClient.post(`${this.baseUrl}/user/searchUser`, data, {
-      headers: {
-        authorization: `Bearer__${localStorage.getItem('userToken')}`,
-      },
+      headers:this.header
     });
   }
 
 addAdmin(data:any): any {
     return this.HttpClient.put(`${this.baseUrl}/user/addAdmin`, data, {
-      headers: {
-        authorization: `Bearer__${localStorage.getItem('userToken')}`,
-      },
+      headers:this.header
     });
   }
   addSuperAdmin(data:any): any {
     return this.HttpClient.put(`${this.baseUrl}/user/addSuperAdmin`, data, {
-      headers: {
-        authorization: `Bearer__${localStorage.getItem('userToken')}`,
-      },
+      headers:this.header
     });
   }
   removeAdmin(data:any): any {
     return this.HttpClient.put(`${this.baseUrl}/user/removeAdmin`, data, {
-      headers: {
-        authorization: `Bearer__${localStorage.getItem('userToken')}`,
-      },
+      headers:this.header
     });
   }
+  getAllUser(): any {
+    return this.HttpClient.get(`${this.baseUrl}/user/getAllUser`);
+  }
+
+
+
   // orders
   addOrder(data:any): any {
     return this.HttpClient.post(`${this.baseUrl}/orders/addOrder`, data, {
-      headers: {
-        authorization: `Bearer__${localStorage.getItem('userToken')}`,
-      },
+      headers:this.header
+    });
+  }
+  getAllOrders(): any {
+    return this.HttpClient.get(`${this.baseUrl}/orders/getAllOrders`);
+  }
+  updateOrderStatus(data:any): any {
+    console.log(data);
+
+    return this.HttpClient.put(`${this.baseUrl}/orders/updateOrderStatus`,data,{
+      headers:this.header
     });
   }
 }

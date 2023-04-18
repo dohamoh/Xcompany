@@ -37,6 +37,8 @@ h6 {
 }
 .main-color1{color: #fcd51a;}
 .main-color2{color: #00a0e1;}
+.bg-main-color1{background-color: #fcd51a;}
+.bg-main-color2{background-color: #00a0e1;}
 .btn-main {
   background-color: #fcd51a;
   transition: 0.5s !important;
@@ -118,4 +120,20 @@ input {
 
 .scroll::-webkit-scrollbar-thumb {
   background-color: #fcd51a;
+}
+.scrollX::-webkit-scrollbar {
+  width: 5px;
+  height: 0px;
+
+}
+.scrollX::-webkit-scrollbar-track {
+  background-color: #b09928;
+
+}
+
+.scrollX::-webkit-scrollbar-thumb {
+  background-color: #fcd51a;
+}
+.rounded-50{
+  border-radius: 500px;
 }

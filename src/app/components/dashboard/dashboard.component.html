@@ -1,10 +1,17 @@
 <section>
-
+  <div class=" col-12 mb-3 justify-content-end d-flex align-items-end m-0">
+    <select class="rounded-0 col-lg-2 col-md-4 col-6 p-2 rounded-3 border-0 box-shadow" #date (change)="getNewData(date)">
+      <option value="today" >today</option>
+      <option value="LastWeek" selected>this week</option>
+      <option value="LastMonth">this month</option>
+      <option value="LastYear">this year</option>
+    </select>
+  </div>
   <div class="cardBox row">
    <div class="col-12 col-sm-6 mt-3 mt-lg-0 col-lg-3 px-2">
     <div class="cards d-flex align-items-center justify-content-between p-4 rounded-3 box-shadow">
       <div class="">
-          <div class="numbers">504</div>
+          <div class="numbers">{{allUser?.length}}</div>
           <div class="cardName mt-1">User</div>
       </div>
       <i class="bi bi-people-fill"></i>
@@ -13,7 +20,7 @@
    <div class="col-12 col-sm-6 mt-3 mt-lg-0 col-lg-3 px-2">
     <div class="cards  d-flex align-items-center justify-content-between p-4 rounded-3 box-shadow">
       <div class="">
-          <div class="numbers">77</div>
+          <div class="numbers">{{allClients?.length}}</div>
           <div class="cardName mt-1">Clients</div>
       </div>
       <i  class="bi bi-journal-plus"></i>
@@ -22,7 +29,7 @@
    <div class="col-12 col-sm-6 mt-3 mt-lg-0 col-lg-3 px-2">
     <div class="cards  d-flex align-items-center justify-content-between p-4 rounded-3 box-shadow">
       <div class="">
-          <div class="numbers">136</div>
+          <div class="numbers">{{Project?.length}}</div>
           <div class="cardName mt-1">Project</div>
       </div>
       <i class="bi bi-kanban"></i>
@@ -31,7 +38,7 @@
    <div class="col-12 col-sm-6 mt-3 mt-lg-0 col-lg-3 px-2">
     <div class="cards  d-flex align-items-center justify-content-between p-4 rounded-3 box-shadow">
       <div class="">
-          <div class="numbers">$14369</div>
+          <div class="numbers">${{Earning}}</div>
           <div class="cardName mt-1">Earning</div>
       </div>
       <i class="bi bi-cash-stack"></i>
@@ -44,90 +51,45 @@
 
 
 
-  <div class="details d-flex row col-12 mt-5">
+  <div class="details d-flex row col-12 mt-3">
     <div class="recentOrders col-md-8 col-12 scrollX scroll overflow-hidden">
         <div class="cardHeader">
             <h2>Recent Orders</h2>
-            <button  class="btn btn-main">View All</button>
+            <!-- <button  class="btn btn-main">View All</button> -->
+
+
         </div>
 
         <table>
             <thead>
                 <tr>
-                    <td>Name</td>
+                    <td>Name / Email</td>
                     <td>Service</td>
                     <td>Price</td>
                     <td>Status</td>
+                    <td></td>
+
                 </tr>
             </thead>
 
             <tbody>
-                <tr>
-                    <td>Star Refrigerator</td>
-                    <td>Marketing</td>
-                    <td>$1200</td>
-                    <td><span class="status delivered">DONE</span></td>
+                <tr *ngFor="let item of allOrders">
+                    <td>{{item.clientId?.userName}} <br> {{item.clientId?.email}}</td>
+                    <td>{{item.service?.servicesName}}</td>
+                    <td>{{ item.service?.servicesPrice}} $</td>
+                    <td><span class="status " [ngClass]="item.status == 'In progress'? 'inProgress':item.status == 'Done'? 'Done':item.status == 'Canceled'? 'Canceled':''">{{item.status}}</span></td>
+                    <div class="dropdown my-auto">
+                      <i class="bi bi-three-dots-vertical dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                      </i>
+                      <ul class="dropdown-menu">
+                        <li (click)="updateStatus('Done',item._id)"><a class="dropdown-item" *ngIf="item.status != 'Done'" (click)="item.status = 'Done'" >Done</a></li>
+                        <li (click)="updateStatus('In progress',item._id)"><a class="dropdown-item" *ngIf="item.status != 'In progress'" (click)="item.status = 'In progress'" >In progress</a></li>
+                        <li (click)="updateStatus('Canceled',item._id)"><a class="dropdown-item" *ngIf="item.status != 'Canceled'" (click)="item.status = 'Canceled'" >Cancel</a></li>
+                      </ul>
+                    </div>
                 </tr>
-                <tr>
-                    <td>Star Refrigerator</td>
-                    <td>Marketing</td>
-                    <td>$1200</td>
-                    <td><span class="status delivered">DONE</span></td>
-                </tr>
-                <tr>
-                    <td>Star Refrigerator</td>
-                    <td>Marketing</td>
-                    <td>$1200</td>
-                    <td><span class="status delivered">DONE</span></td>
-                </tr>
-                <tr>
-                    <td>Star Refrigerator</td>
-                    <td>Marketing</td>
-                    <td>$1200</td>
-                    <td><span class="status delivered">DONE</span></td>
-                </tr>
-                <tr>
-                    <td>Star Refrigerator</td>
-                    <td>Marketing</td>
-                    <td>$1200</td>
-                    <td><span class="status delivered">DONE</span></td>
-                </tr>
-                <tr>
-                    <td>Star Refrigerator</td>
-                    <td>Marketing</td>
-                    <td>$1200</td>
-                    <td><span class="status delivered">DONE</span></td>
-                </tr>
-                <tr>
-                    <td>Star Refrigerator</td>
-                    <td>Marketing</td>
-                    <td>$1200</td>
-                    <td><span class="status delivered">DONE</span></td>
-                </tr>
-                <tr>
-                    <td>Star Refrigerator</td>
-                    <td>Marketing</td>
-                    <td>$1200</td>
-                    <td><span class="status delivered">DONE</span></td>
-                </tr>
-                <tr>
-                    <td>Star Refrigerator</td>
-                    <td>Marketing</td>
-                    <td>$1200</td>
-                    <td><span class="status delivered">DONE</span></td>
-                </tr>
-                <tr>
-                    <td>Star Refrigerator</td>
-                    <td>Marketing</td>
-                    <td>$1200</td>
-                    <td><span class="status delivered">DONE</span></td>
-                </tr>
-                <tr>
-                    <td>Star Refrigerator</td>
-                    <td>Marketing</td>
-                    <td>$1200</td>
-                    <td><span class="status delivered">DONE</span></td>
-                </tr>
+
 
 
             </tbody>
@@ -141,72 +103,20 @@
         </div>
 
         <table>
-            <tr>
+            <tr  *ngFor="let item of allUser" [ngClass]="{'d-none': item.role != 'User'}">
                 <td width="60px">
-
+                  <i class="bi bi-person-circle fs-2 text-dark"></i>
                 </td>
                 <td>
-                    <h4>David <br> <span>david@gmail.com</span></h4>
+                    <h4>{{item.userName}} <br> <span>{{item.email}}</span></h4>
                 </td>
             </tr>
-            <tr>
-                <td width="60px">
 
-                </td>
-                <td>
-                    <h4>David <br> <span>david@gmail.com</span></h4>
-                </td>
-            </tr>
-            <tr>
-                <td width="60px">
-
-                </td>
-                <td>
-                    <h4>David <br> <span>david@gmail.com</span></h4>
-                </td>
-            </tr>
-            <tr>
-                <td width="60px">
-
-                </td>
-                <td>
-                    <h4>David <br> <span>david@gmail.com</span></h4>
-                </td>
-            </tr>
-            <tr>
-                <td width="60px">
-
-                </td>
-                <td>
-                    <h4>David <br> <span>david@gmail.com</span></h4>
-                </td>
-            </tr>
-            <tr>
-                <td width="60px">
-
-                </td>
-                <td>
-                    <h4>David <br> <span>david@gmail.com</span></h4>
-                </td>
-            </tr>
-            <tr>
-                <td width="60px">
-
-                </td>
-                <td>
-                    <h4>David <br> <span>david@gmail.com</span></h4>
-                </td>
-            </tr>
-            <tr>
-                <td width="60px">
-
-                </td>
-                <td>
-                    <h4>David <br> <span>david@gmail.com</span></h4>
-                </td>
-            </tr>
 
         </table>
+        <div *ngIf="allUser?.length == 0" class="main-color2 p-3 w-100 d-flex align-items-center justify-content-center h-50">
+          <h4>There are no new users</h4>
+        </div>
     </div>
 </div>
 </section>
