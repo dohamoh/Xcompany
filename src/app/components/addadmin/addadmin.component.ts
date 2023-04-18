@@ -24,15 +24,13 @@ constructor(private ReqsService:ReqsService,private SharedService:SharedService)
     let data = {
       name: this.name,
     };
-console.log(data);
-
     if (data.name == '') {
       this.allUser = [];
       // this.messageErr = '';
       // this.loaded = 'd-none';
     } else {
       this.ReqsService.searchUser(data).subscribe((data: any) => {
-        console.log(data);
+
 
         if (data.message == 'users') {
           this.allUser = data.allUser;
@@ -55,7 +53,7 @@ console.log(data);
       id
     }
     this.ReqsService.addAdmin(data).subscribe((data:any)=>{
-      console.log(data);
+
       if (data.message == 'Done') {
         this.name = ''
         this.search()
@@ -67,7 +65,7 @@ console.log(data);
       id
     }
     this.ReqsService.addSuperAdmin(data).subscribe((data:any)=>{
-      console.log(data);
+
       if (data.message == 'Done') {
 this.name = ''
 this.search()
@@ -80,7 +78,7 @@ this.search()
       id
     }
     this.ReqsService.removeAdmin(data).subscribe((data:any)=>{
-      console.log(data);
+
       if (data.message == 'Done') {
         this.name = ''
         this.search()
