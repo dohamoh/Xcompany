@@ -7,8 +7,8 @@
     makers, designing live
     events, virtual experiences, and unique digital
     tools. We find the extraordinary</p>
-  <div class="row">
-    <div class="col-12 row d-flex align-items-start mt-5" *ngFor="let item of allServices let i = index"
+  <div class="row d-flex align-items-center justify-content-center">
+    <div class="col-12 row d-flex align-items-start m-0 mt-5 pb-2" *ngFor="let item of allServices let i = index"
       [ngClass]="{'flex-row-reverse': i%2!=0}">
       <div class="col-lg-5 col-12 col">
         <div class="img position-relative overflow-hidden" style="background-image: url({{item.image}});">
@@ -22,7 +22,7 @@
 
 
       <div class="col-lg-7 col-12 row m-0">
-        <div class=" col-12 col row d-flex align-items-center justify-content-between flex-column" id="Brief{{i}}">
+        <div class=" col-12 col row d-flex align-items-center justify-content-between flex-column m-auto" id="Brief{{i}}">
 
           <div class=" col-12 d-flex  m-0 mt-2 p-0 desc py-3" [ngClass]=" i%2!=0 ? 'descL':'descR justify-content-end'">
             <button *ngIf="role != 'User'"
@@ -66,7 +66,7 @@
 
 
 
-        <div class="col-12 col row d-flex align-items-center justify-content-between flex-column close text-black"
+        <div class="col-12 col row d-flex align-items-center justify-content-between flex-column close text-black m-auto"
           id="Desc{{i}}">
           <app-services-details [data]="item"></app-services-details>
           <p class=" text-primary text-decoration-underline cursor-pointer" (click)="showMore($event,i)">Show less</p>
