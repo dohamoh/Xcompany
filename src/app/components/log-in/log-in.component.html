@@ -17,23 +17,30 @@
         <form [formGroup]='logInForm' (ngSubmit)="onSubmit(logInForm.value)">
 
           <p class="text-danger">{{emailErr}}</p>
-          <input type="email" class="mb-4 w-100 border-bottom form-control p-2 rounded-3" required="required"
-            placeholder="Your Email" formControlName="email" name="email" data-error="Email is required.">
-          <div class="text-danger"
-            *ngIf="logInForm.get('email')?.errors !== null && logInForm.get('email')?.touched && logInForm.get('email')">
-            <p *ngIf="logInForm.get('email')?.errors?.['required'] ">email is required
-            </p>
-            <p *ngIf="logInForm.get('email')?.errors?.['email'] ">email is invalid
-            </p>
+
+          <div class="mb-4">
+            <input type="email" class="w-100 border-bottom form-control p-2 rounded-3" required="required"
+              placeholder="Your Email" formControlName="email" name="email" data-error="Email is required.">
+            <div class="text-danger"
+              *ngIf="logInForm.get('email')?.errors !== null && logInForm.get('email')?.touched && logInForm.get('email')">
+              <p *ngIf="logInForm.get('email')?.errors?.['required'] ">Email is required
+              </p>
+              <p *ngIf="logInForm.get('email')?.errors?.['email'] ">Email is invalid
+              </p>
+            </div>
           </div>
 
           <p class="text-danger">{{passErr}}</p>
-          <input class="mb-4 w-100 border-bottom form-control p-2 rounded-3" type="password" required="required"
-            placeholder="Your Password" formControlName="password" name="password" data-error="Password is required." />
+
+          <div class="mb-4">
+            <input class="w-100 border-bottom form-control p-2 rounded-3" type="password" required="required"
+              placeholder="Your Password" formControlName="password" name="password"
+              data-error="Password is required." />
             <div class="text-danger"
-            *ngIf="logInForm.get('password')?.errors !== null && logInForm.get('password')?.touched && logInForm.get('password')">
-            <p *ngIf="logInForm.get('password')?.errors?.['required'] ">password is required
-            </p>
+              *ngIf="logInForm.get('password')?.errors !== null && logInForm.get('password')?.touched && logInForm.get('password')">
+              <p *ngIf="logInForm.get('password')?.errors?.['required'] ">Password is required
+              </p>
+            </div>
           </div>
 
           <button class="w-100 btn m-auto text-center text-white" [disabled]="!logInForm.valid" type="submit">

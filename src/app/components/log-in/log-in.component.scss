@@ -2,6 +2,20 @@ section {
   height: 90vh;
   overflow: hidden;
 
+  @media screen and (max-width: 1300px) and (min-width: 992px) {
+    overflow: hidden !important;
+    height: 75vh !important;
+  }
+
+  @media screen and (max-width: 992px) {
+    overflow: hidden !important;
+    height: 75vh !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    overflow: hidden !important;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -13,6 +27,7 @@ section {
     background-repeat: no-repeat;
     background-size: 100%;
   }
+
   @media screen and (max-width: 600px) {
     &::before {
       content: "";
@@ -35,27 +50,27 @@ section {
     animation-duration: 1.5s;
 
     @media screen and (min-width: 1600px) {
-      bottom: 850px;
+      bottom: 1000px;
     }
 
     @media screen and (max-width: 1600px) and (min-width:1300px) {
-      bottom: 750px;
+      bottom: 730px;
     }
 
     @media screen and (max-width: 1300px) and (min-width:992px) {
-      bottom: 600px;
+      bottom: 530px;
     }
 
-    @media screen and (max-width: 992px) {
-      bottom: 450px;
+    @media screen and (max-width: 992px) and (min-width: 768px) {
+      bottom: 430px;
     }
 
-    @media screen and (max-width: 768px) {
-      bottom: 350px;
+    @media screen and (max-width: 768px) and (min-width: 600px) {
+      bottom: 330px;
     }
 
     @media screen and (max-width: 600px) {
-      bottom: 350px;
+      bottom: 230px;
     }
   }
 

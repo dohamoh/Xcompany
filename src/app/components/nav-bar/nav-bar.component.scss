@@ -1,19 +1,28 @@
-nav{
-    @media screen and (max-width: 992px) {
-      z-index: 99 !important;
-      background-color: rgb(255, 255, 255) !important;
-      padding-bottom: 1rem;
-    }
-  .mainUl{
+nav {
+  @media screen and (max-width: 992px) {
+    position: sticky;
+    top: 0;
+    left: 0;
+    margin-bottom: 3rem !important;
+    width: 100% !important;
+    z-index: 99 !important;
+    background-color: rgb(255, 255, 255) !important;
+    // margin-top: 0rem !important;
+    padding-bottom: 1rem;
+  }
+
+  .mainUl {
     justify-content: space-between;
+
     // width: 50% !important;
-    ul{
+    ul {
       justify-content: end;
       width: 65% !important;
-      li{
-        a{
-        color: rgb(0, 0, 0) !important;
-        font-size: 1.2rem;
+
+      li {
+        a {
+          color: rgb(0, 0, 0) !important;
+          font-size: 1.2rem;
         }
       }
     }

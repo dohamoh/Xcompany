@@ -11,7 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class SignUpComponent {
   registerForm: FormGroup = new FormGroup({
-    userName: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+    userName: new FormControl(null, [Validators.required, Validators.minLength(4)]),
     email: new FormControl(null, [Validators.required, Validators.email]),
     password: new FormControl(null, [Validators.required, Validators.minLength(4)]),
   })
@@ -24,7 +24,7 @@ export class SignUpComponent {
   onSubmit(data: any) {
     this.Auth.signUp(this.registerForm.value).subscribe(
       (data: any) => {
-   
+
         if (data.message == 'added successfully') {
           this.router.navigate(['/logIn'])
         }

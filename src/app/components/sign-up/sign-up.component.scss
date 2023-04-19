@@ -1,6 +1,20 @@
 section {
   height: 90vh;
-  overflow: hidden;
+  overflow: hidden !important;
+  @media screen and (max-width: 1300px) and (min-width: 992px) {
+    overflow: hidden !important;
+    height: 75vh !important;
+  }
+
+  @media screen and (max-width: 992px) {
+    overflow: hidden !important;
+    height: 75vh !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    overflow: hidden !important;
+    // padding-right: 2rem !important;
+  }
 
   &::before {
     content: "";
@@ -31,7 +45,6 @@ section {
 
   .main {
     box-shadow: 10px 10px 20px 5px rgba(50, 44, 44, 0.537);
-    // bottom: 650px;
     animation: fadeInDown;
     animation-duration: 2s;
 
@@ -40,23 +53,23 @@ section {
     }
 
     @media screen and (max-width: 1600px) and (min-width:1300px) {
-      bottom: 750px;
+      bottom: 700px;
     }
 
     @media screen and (max-width: 1300px) and (min-width: 992px) {
-      bottom: 600px;
-    }
-
-    @media screen and (max-width: 992px) {
       bottom: 500px;
     }
 
-    @media screen and (max-width: 768px) {
-      bottom: 450px;
+    @media screen and (max-width: 992px) and (min-width: 768px) {
+      bottom: 400px;
+    }
+
+    @media screen and (max-width: 768px) and (min-width: 600px) {
+      bottom: 300px;
     }
 
     @media screen and (max-width: 600px) {
-      bottom: 350px;
+      bottom: 200px;
     }
   }
 

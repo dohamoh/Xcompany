@@ -34,14 +34,14 @@ export class LogInComponent {
       },
       (err: HttpErrorResponse) => {
         if (err.error.message == 'in valid password') {
-          this.passErr = 'in valid password';
+          this.passErr = 'Invalid Password';
           this.emailErr = '';
         } else if (err.error.message == 'You have to register first') {
           this.passErr = '';
           this.emailErr = 'You have to register first';
         } else if (err.error.message == 'You have to confirm email first') {
           this.passErr = '';
-          this.emailErr = 'You have to confirm email first'
+          this.emailErr = 'You Have To Confirm Your Email First...Please Check Your Email'
         }
       }
     );

@@ -17,38 +17,44 @@
 
           <p class="text-danger">{{emailErr}}</p>
 
-          <input type="email" class="mb-4 w-100 border-bottom form-control p-2 rounded-3" required="required"
-            placeholder="Your email" formControlName="email" name="email" data-error="email is required.">
-          <div class="signUpErrs"
-            *ngIf="registerForm.get('email')?.errors !== null && registerForm.get('email')?.touched && registerForm.get('email')">
-            <p *ngIf="registerForm.get('email')?.errors?.['required'] ">email is required
-            </p>
-            <p *ngIf="registerForm.get('email')?.errors?.['email'] ">email is invalid
-            </p>
-          </div>
-
-          <input type="text" class="mb-4 w-100 border-bottom form-control p-2 rounded-3" required placeholder="User Name" formControlName="userName" name="userName" data-error="userName is required">
-          <div class="signUpErrs" *ngIf="registerForm.get('userName')?.errors !== null && registerForm.get('userName')?.touched && registerForm.get('userName')">
-            <p *ngIf="registerForm.get('userName')?.errors?.['required']">
-              userName is required
-            </p>
-
-          </div>
-          <input class="mb-4 w-100 border-bottom form-control p-2 rounded-3" type="password" required="required"
-            placeholder="Your Password" formControlName="password" name="password" data-error="Password is required." />
+          <div class="mb-4">
+            <input type="email" class=" w-100 border-bottom form-control p-2 rounded-3" required="required"
+              placeholder="Your email" formControlName="email" name="email" data-error="email is required.">
             <div class="signUpErrs"
-            *ngIf="registerForm.get('password')?.errors !== null && registerForm.get('password')?.touched && registerForm.get('password')">
-            <p *ngIf="registerForm.get('password')?.errors?.['required'] ">password is required
-            </p>
-            <p *ngIf="registerForm.get('password')?.errors?.['minLength'] ">password min length is 4
-            </p>
+              *ngIf="registerForm.get('email')?.errors !== null && registerForm.get('email')?.touched && registerForm.get('email')">
+              <p *ngIf="registerForm.get('email')?.errors?.['required'] ">email is required
+              </p>
+              <p *ngIf="registerForm.get('email')?.errors?.['email'] ">email is invalid
+              </p>
+            </div>
           </div>
-          <!-- <div class="form-check text-black d-flex justify-content-center mb-3">
-            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
-            <label class="form-check-label" for="form2Example3g">
-              I agree all statements in <a href="#!" class="text-black"><u>Terms of service</u></a>
-            </label>
-          </div> -->
+
+          <div class="mb-4">
+            <input type="text" class="w-100 border-bottom form-control p-2 rounded-3" required placeholder="User Name"
+              formControlName="userName" name="userName" data-error="userName is required">
+            <div class="signUpErrs"
+              *ngIf="registerForm.get('userName')?.errors !== null && registerForm.get('userName')?.touched && registerForm.get('userName')">
+              <p *ngIf="registerForm.get('userName')?.errors?.['required']">
+                userName is required
+              </p>
+              <p *ngIf="registerForm.get('userName')?.errors?.['minlength']">userName min length is 4
+              </p>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <input class="w-100 border-bottom form-control p-2 rounded-3" type="password" required="required"
+              placeholder="Your Password" formControlName="password" name="password"
+              data-error="Password is required." />
+            <div class="signUpErrs"
+              *ngIf="registerForm.get('password')?.errors !== null && registerForm.get('password')?.touched && registerForm.get('password')">
+              <p *ngIf="registerForm.get('password')?.errors?.['required'] ">password is required
+              </p>
+              <p *ngIf="registerForm.get('password')?.errors?.['minlength'] ">password min length is 4
+              </p>
+            </div>
+          </div>
+
           <button class="w-100 btn m-auto text-center text-white" [disabled]="!registerForm.valid" type="submit">
             Sign Up
           </button>
