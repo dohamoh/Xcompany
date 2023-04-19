@@ -1,0 +1,84 @@
+section {
+  height: 90vh;
+  overflow: hidden;
+}
+section::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+  width: 35rem;
+  height: 35rem;
+  background-image: url(../../../assets/images/svgs/2-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+@media screen and (max-width: 600px) {
+  section::before {
+    content: "";
+    position: absolute;
+    display: none;
+    bottom: 0px;
+    left: 20px;
+    width: 0rem;
+    height: 0rem;
+    background-image: url(../../../assets/images/svgs/2-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+}
+section .main {
+  box-shadow: 10px 10px 20px 5px rgba(50, 44, 44, 0.537);
+  animation: fadeInDown;
+  animation-duration: 1.5s;
+}
+@media screen and (min-width: 1600px) {
+  section .main {
+    bottom: 850px;
+  }
+}
+@media screen and (max-width: 1600px) and (min-width: 1300px) {
+  section .main {
+    bottom: 750px;
+  }
+}
+@media screen and (max-width: 1300px) and (min-width: 992px) {
+  section .main {
+    bottom: 600px;
+  }
+}
+@media screen and (max-width: 992px) {
+  section .main {
+    bottom: 450px;
+  }
+}
+@media screen and (max-width: 768px) {
+  section .main {
+    bottom: 350px;
+  }
+}
+@media screen and (max-width: 600px) {
+  section .main {
+    bottom: 350px;
+  }
+}
+section .signUpErrs p {
+  color: rgb(137, 0, 0);
+}
+@keyframes blob {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+section svg {
+  width: 35% !important;
+}
+section form button {
+  background-color: orange;
+}/*# sourceMappingURL=log-in.component.css.map */

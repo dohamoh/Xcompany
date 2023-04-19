@@ -1,0 +1,35 @@
+footer {
+  background: linear-gradient(180deg, #85c9f9, #03678f, #023143);
+}
+@media screen and (max-width: 992px) and (min-width: 767px) {
+  footer {
+    margin-top: 28rem !important;
+  }
+}
+@media screen and (max-width: 767px) and (min-width: 300px) {
+  footer {
+    margin-top: 28rem !important;
+  }
+}
+footer .bgLogo {
+  width: 20rem;
+  height: 13rem;
+  background-image: url(../../../assets/images/logo1.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+footer p {
+  line-height: 1.8;
+}
+footer h4 {
+  font-family: "Dancing Script", cursive;
+}
+footer button {
+  background: linear-gradient(35deg, #00a5e5, #cfb733, #a7b93d);
+  transition: 1s;
+}
+footer button:hover {
+  background: linear-gradient(to left, #fcd51a, #b4d401);
+  transition: 1s !important;
+}/*# sourceMappingURL=footer.component.css.map */

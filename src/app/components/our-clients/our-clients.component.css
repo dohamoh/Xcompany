@@ -1,0 +1,15 @@
+section .logo {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 20rem;
+}
+section .details {
+  height: auto !important;
+  transition: 1s !important;
+}
+section .close {
+  transition: 1s !important;
+  height: 0vh !important;
+  overflow: hidden;
+}/*# sourceMappingURL=our-clients.component.css.map */

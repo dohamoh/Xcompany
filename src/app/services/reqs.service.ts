@@ -75,6 +75,8 @@ export class ReqsService {
     });
   }
   clearCart(): any {
+
+
     let token = localStorage.getItem('userToken');
     return this.HttpClient.put(`${this.baseUrl}/user/clearCart`, token, {
       headers:this.header
@@ -118,15 +120,8 @@ addAdmin(data:any): any {
     return this.HttpClient.get(`${this.baseUrl}/orders/getAllOrders`);
   }
   updateOrderStatus(data:any): any {
-    console.log(data);
-
     return this.HttpClient.put(`${this.baseUrl}/orders/updateOrderStatus`,data,{
       headers:this.header
     });
   }
 }
-// , {
-//   headers: {
-//     authorization: `Bearer_${localStorage.getItem('userToken')}`,
-//   }
-// }

@@ -1,0 +1,32 @@
+section {
+  height: 80vh;
+}
+section h1 {
+  font-size: 80px;
+  margin: 30px 0;
+}
+section textarea {
+  width: 90%;
+  margin: auto;
+}
+section .inputs {
+  border-left: 2px solid rgb(0, 0, 0);
+}
+section .inputs .info {
+  opacity: 0.7;
+  font-weight: 600;
+  color: #fcd51a;
+}
+section .inputs .info span {
+  color: #00a0e1;
+}
+section .image {
+  background-image: url("../../../assets/images/Contact us-bro.svg");
+  background-color: rgb(255, 219, 88) !important;
+}
+
+.ani {
+  opacity: 1;
+  animation: slideInLeft;
+  animation-duration: 1s;
+}/*# sourceMappingURL=contact-us.component.css.map */
