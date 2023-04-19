@@ -25,7 +25,7 @@ if (data.length !=0) {
   this.dropdownList = arr
   this.dropdownSettings = {
     singleSelection: false,
-
+    idField: '_id',
     textField: 'servicesName',
     selectAllText: 'Select All',
     unSelectAllText: 'UnSelect All',
@@ -41,9 +41,11 @@ if (data.length !=0) {
 
   }
   onItemSelect(item: any) {
+    console.log(item);
 
   }
   onSelectAll(items: any) {
+    console.log(items);
   }
   upload(event: any) {
     const { files } = event.target;
@@ -68,6 +70,7 @@ if (data.length !=0) {
 
   select(data: any) {
 
+console.log(data);
 
   }
   addClient() {

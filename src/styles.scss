@@ -137,3 +137,12 @@ input {
 .rounded-50{
   border-radius: 500px;
 }
+.dropdown-toggle {
+
+
+
+
+  &::after {
+    display: none;
+  }
+}

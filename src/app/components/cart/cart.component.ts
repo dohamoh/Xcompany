@@ -88,7 +88,7 @@ export class CartComponent {
     });
     const paymentStripe = (stripeToken: any, email: any) => {
       this.ReqsService.processPayment(stripeToken, (this.total * 100), email).subscribe((data: any) => {
-        console.log(data);
+
         if (data.data == "success") {
           this.checkOut()
           this.success = true

@@ -22,7 +22,7 @@
 
 
       <div class="col-lg-7 col-12 row m-0">
-        <div class=" col-12 col row d-flex align-items-center justify-content-between flex-column" id="Brief">
+        <div class=" col-12 col row d-flex align-items-center justify-content-between flex-column" id="Brief{{i}}">
 
           <div class=" col-12 d-flex  m-0 mt-2 p-0 desc py-3" [ngClass]=" i%2!=0 ? 'descL':'descR justify-content-end'">
             <button *ngIf="role != 'User'"
@@ -52,7 +52,7 @@
             </div>
           </div>
           <div class=" col-12 d-flex justify-content-between m-0 mt-2 p-0 desc" [ngClass]=" i%2!=0 ? 'descL':'descR'">
-            <p class=" text-primary text-decoration-underline cursor-pointer" (click)="showMore($event)">Show more</p>
+            <p class=" text-primary text-decoration-underline cursor-pointer" (click)="showMore($event,i)">Show more</p>
 
             <button (click)="addToCart(item._id)" *ngIf="role == 'User'"
               class=" btn rounded-3 btn-main ani col-3 text-white d-flex align-items-center justify-content-center ">
@@ -67,9 +67,9 @@
 
 
         <div class="col-12 col row d-flex align-items-center justify-content-between flex-column close text-black"
-          id="Desc">
+          id="Desc{{i}}">
           <app-services-details [data]="item"></app-services-details>
-          <p class=" text-primary text-decoration-underline cursor-pointer" (click)="showMore($event)">Show less</p>
+          <p class=" text-primary text-decoration-underline cursor-pointer" (click)="showMore($event,i)">Show less</p>
 
         </div>
       </div>

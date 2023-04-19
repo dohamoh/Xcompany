@@ -36,8 +36,8 @@
 
 
   <div class="pages text-black">
-    <div class="page " #addUser *ngIf="role == 'Super admin'"> <app-addadmin></app-addadmin></div>
-    <div class="page " [ngClass]="{'d-none': role == 'Super admin'}" #addServ> <app-add-services></app-add-services></div>
+    <div class="page d-none" #addUser > <app-addadmin></app-addadmin></div>
+    <div class="page "  #addServ> <app-add-services></app-add-services></div>
     <div class="page d-none" #add><app-add-client></app-add-client></div>
     <div class="page d-none" #dash><app-dashboard></app-dashboard></div>
   </div>

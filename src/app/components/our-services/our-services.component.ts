@@ -19,6 +19,7 @@ export class OurServicesComponent {
   role:any
   loading: Boolean = false;
   editLoading: Boolean = false;
+  display:any
   constructor(
     private SharedService: SharedService,
     private ReqsService: ReqsService
@@ -101,25 +102,19 @@ this.role = localStorage.getItem('role')
       }
     });
   }
-  showMore(data: any) {
-    const Brief = document.querySelector('#Brief') as HTMLElement | any;
-    const Desc = document.querySelector('#Desc') as HTMLElement | any;
-
+  showMore(data: any,i:any) {
+    const Brief = document.querySelector(`#Brief${i}`) as HTMLElement | any;
+    const Desc = document.querySelector(`#Desc${i}`) as HTMLElement | any;
     if (data.target.innerHTML == 'Show more') {
-      Brief.classList.add('close');
-
-      Desc.classList.remove('close');
+      Brief?.classList?.add('close');
+      Desc?.classList?.remove('close');
     } else {
-      Brief.classList.remove('close');
-
-      Desc.classList.add('close');
+      Brief?.classList?.remove('close');
+      Desc?.classList?.add('close');
     }
   }
 addToCart(id:any){
-
   this.ReqsService.addToCart(id).subscribe((data:any)=>{
-
-
       if (data.message == 'added') {
         this.SharedService.updateUserData()
       }
