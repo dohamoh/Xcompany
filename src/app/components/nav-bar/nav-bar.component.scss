@@ -1,4 +1,9 @@
 nav{
+    @media screen and (max-width: 992px) {
+      z-index: 99 !important;
+      background-color: rgb(255, 255, 255) !important;
+      padding-bottom: 1rem;
+    }
   .mainUl{
     justify-content: space-between;
     // width: 50% !important;

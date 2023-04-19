@@ -86,7 +86,7 @@ section {
       }
 
       .bgImg2 {
-        right: -110px;
+        right: -30px;
         bottom: 0;
         background-image: url(../../../assets/images/shape2.png);
         background-size: cover;
@@ -100,7 +100,7 @@ section {
     }
 
     .section2 {
-      overflow: hidden !important;
+      // overflow: hidden !important;
 
       h3 {
         font: 2.5rem;
@@ -170,6 +170,9 @@ section {
         border-radius: 2rem;
         height: 14rem;
         width: 20rem !important;
+        @media screen and (max-width: 585px){
+          width: 25rem !important;
+        }
       }
 
       .bgImg6 {
