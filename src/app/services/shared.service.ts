@@ -37,11 +37,17 @@ export class SharedService {
   currentClientServices = this.clientServices.asObservable();
 
   updateUserData() {
+    console.log(localStorage.getItem('userToken'));
+if (localStorage.getItem('userToken') == null) {
+  localStorage.removeItem('role');
+
+}
     if (localStorage.getItem('userToken')) {
       this.ReqsService.getUserRole(localStorage.getItem('userToken')).subscribe(
         (data: any) => {
           if (data.user) {
 
+console.log(data);
 
             localStorage.setItem('role', data.user.role);
             this.userData.next(data.user);
@@ -52,6 +58,8 @@ export class SharedService {
             err.error.message == 'jwt expired' ||
             err.error.message == 'jwt malformed'
           ) {
+            console.log(err.error);
+
             localStorage.removeItem('userToken');
             this.router.navigate([`/signUp`]);
           }

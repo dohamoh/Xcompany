@@ -4,11 +4,8 @@
     <div class="col-12 justify-content-center d-flex mt-3">
       <h2 class="fw-semibold">{{item.name}}</h2>
     </div>
-    <div class="col-md-6 col-12 d-flex justify-content-center align-items-center my-4">
-      <img class="w-50" src="{{item.imagesUrls[i]}}" alt="">
-    </div>
-    <div class="col-md-6 col-12 d-flex justify-content-center align-items-center my-4">
-      <img class="w-50" src="{{item.imagesUrls[i+1]}}" alt="">
+    <div *ngFor="let img of item.imagesUrls" class="col-lg-4 p-3 mx-auto col-md-6 col-12 d-flex justify-content-center align-items-center my-4">
+      <img class="w-100" src="{{img}}" alt="">
     </div>
   </div>
 </section>
