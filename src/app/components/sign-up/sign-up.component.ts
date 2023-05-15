@@ -24,7 +24,6 @@ export class SignUpComponent {
   onSubmit(data: any) {
     this.Auth.signUp(this.registerForm.value).subscribe(
       (data: any) => {
-
         if (data.message == 'added successfully') {
           this.router.navigate(['/logIn'])
         }

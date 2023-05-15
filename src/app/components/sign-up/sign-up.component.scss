@@ -56,12 +56,16 @@ section {
       bottom: 700px;
     }
 
-    @media screen and (max-width: 1300px) and (min-width: 992px) {
-      bottom: 500px;
+    @media screen and (max-width: 1300px) and (min-width: 1200px) {
+      bottom: 520px;
+    }
+
+    @media screen and (max-width: 1200px) and (min-width: 992px) {
+      bottom: 470px;
     }
 
     @media screen and (max-width: 992px) and (min-width: 768px) {
-      bottom: 400px;
+      bottom: 430px;
     }
 
     @media screen and (max-width: 768px) and (min-width: 600px) {
