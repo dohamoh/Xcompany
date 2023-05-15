@@ -2,20 +2,19 @@
   <div class="container">
     <div (click)="displayClient = item" *ngFor="let item of dataArr let i = index">
       <div class="row cursor-pointer">
-
         <div class="col-12  d-flex  mt-5"
           [ngClass]="i%2 ==0?'justify-content-end':'justify-content-start'" data-aos="fade-down">
-
           <div class=" col-lg-6 col-md-8 col-12 row">
             <div class="col-12 text-capitalize" [ngClass]="i%2 ==0?'text-end':'text-start'">
               <h3 class="fw-semibold fs-2">{{item.clientName}}</h3>
-
             </div>
+
             <div class="col-10 d-flex m-0 mt-2 p-0 desc py-3" [ngClass]="i%2 ==0?'justify-content-start':'justify-content-end'">
               <button *ngIf="role != 'User' && role != null"
                 class=" btn rounded-3 btn-danger ani col-lg-1 col-2 text-white d-flex align-items-center justify-content-center "
                 (click)="deleteClient(item._id)"><i class="bi bi-trash-fill"></i></button>
             </div>
+            
             <div class="col-12 my-2 row">
               <div class="col-12 logo" style="background-image: url({{item.image}});">
               </div>
