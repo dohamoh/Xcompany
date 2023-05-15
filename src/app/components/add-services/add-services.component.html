@@ -6,7 +6,8 @@
 
         <div class="col-12 col-sm-6 col-lg-3 my-2">
           <input type="text" class="w-100 border-0 border-bottom  p-2 " formControlName="servicesName"
-            placeholder="Services name">
+            placeholder="Services name" (keyup)="prevent()">
+            <p class=" text-danger">{{patternErr}}</p>
         </div>
         <div class="col-12 col-sm-6 col-lg-3 my-2">
           <input type="text" class="w-100 border-0 border-bottom  p-2 " formControlName="servicesDescription"
@@ -46,7 +47,7 @@
         </div>
         <div class="col-lg-2 col-md-3 col-5">
           <!-- [disabled]="servicesForm.invalid && pointesForm.invalid" -->
-          <button type="submit"
+          <button type="submit" [disabled]="patternErr !=''"
           (click)="addServices(servicesForm.value)"
             class=" btn rounded-3 btn-main ani w-100 text-white d-flex align-items-center justify-content-center">
             <app-loading *ngIf="loading"></app-loading>
