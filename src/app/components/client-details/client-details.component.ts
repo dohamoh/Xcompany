@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-client-details',
@@ -8,9 +8,12 @@ import { Component, EventEmitter, HostListener, Input, Output } from '@angular/c
 export class ClientDetailsComponent {
 
   @Input()clientData:any
-  
-  @Output() closeClientDetails:EventEmitter<any> = new EventEmitter<any>();
 
+  @Output() closeClientDetails:EventEmitter<any> = new EventEmitter<any>();
+ngOnInit(): void {
+  console.log(this.clientData);
+
+}
   // lineTransform = 'scaleX(0)';
   // @HostListener('window:scroll', [])
   // onWindowScroll() {

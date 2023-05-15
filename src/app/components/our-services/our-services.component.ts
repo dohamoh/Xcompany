@@ -83,7 +83,6 @@ this.role = localStorage.getItem('role')
       this.ReqsService.editServices(data).subscribe((Data: any) => {
         if (Data.message == 'DONE') {
           this.editLoading = false;
-
           this.id = '';
           this.edit = !this.edit;
           this.brief = '';

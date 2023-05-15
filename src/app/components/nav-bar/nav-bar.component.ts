@@ -12,8 +12,12 @@ import * as $ from 'jquery'
 export class NavBarComponent implements OnInit {
   userLoggedIn: any;
   userData: any
+  role:Boolean=false
   constructor(private SharedService: SharedService, private router: Router) { }
   ngOnInit(): void {
+    if (localStorage.getItem('role')) {
+this.role = true
+    }
     this.SharedService.isLoggedIn.subscribe((value) => {
       if (value == true) {
         this.userLoggedIn = true

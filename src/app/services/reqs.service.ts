@@ -30,6 +30,8 @@ export class ReqsService {
   // ----------_____________----------
   // register
   signUp(data: any): any {
+    console.log(data);
+
     return this.HttpClient.post(`${this.baseUrl}/auth/signUp`, data);
   }
   logIn(data: any): any {

@@ -94,6 +94,7 @@ arr.push(element.servicesName)
       formData.append('services', arr);
       this.ReqsService.addClient(formData).subscribe((data: any) => {
         if (data.message == 'added successfully') {
+          this.SharedService.updateClients()
           this.loading = !this.loading;
         }
       });

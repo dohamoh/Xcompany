@@ -1,3 +1,4 @@
+import { SharedService } from 'src/app/services/shared.service';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ReqsService } from 'src/app/services/reqs.service';
@@ -7,7 +8,7 @@ import { ReqsService } from 'src/app/services/reqs.service';
   styleUrls: ['./add-services.component.scss'],
 })
 export class AddServicesComponent {
-  constructor(private ReqsService: ReqsService) {}
+  constructor(private ReqsService: ReqsService,private SharedService :SharedService) {}
   file: any;
   loading: Boolean = false;
   pointesNum: any;
@@ -52,6 +53,7 @@ export class AddServicesComponent {
       data.append('pointesNum', this.pointesNum);
       this.ReqsService.addServices(data).subscribe((data: any) => {
         if (data.message == 'added successfully') {
+          this.SharedService.updateServices()
           this.loading = !this.loading;
           this.servicesForm.reset();
           this.pointesForm.reset();

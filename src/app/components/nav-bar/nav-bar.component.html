@@ -28,7 +28,7 @@
       <div class="signUp d-flex justify-content-end">
         <a *ngIf="!userLoggedIn" class="nav-link me-3 text-black" routerLink="/signUp">Sign Up</a>
         <a *ngIf="userLoggedIn" class="nav-link me-3 text-black" routerLink="/signUp" (click)="logOut()">Log Out</a>
-        <a class=" ms-3 text-black cursor-pointer"  (click)="cart()"><i class="bi bi-cart3"></i></a>
+        <a class=" ms-3 text-black cursor-pointer" *ngIf="role" (click)="cart()"><i class="bi bi-cart3"></i></a>
       </div>
     </div>
   </div>

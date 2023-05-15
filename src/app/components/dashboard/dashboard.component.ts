@@ -31,8 +31,6 @@ export class DashboardComponent {
   public chartHovered(e: any): void {}
 
   ngOnInit(): void {
-   
-
     this.SharedService.currentOrders.subscribe((orders: any) => {
       this.ReqsService.getAllUser().subscribe((users: any) => {
         this.handel(orders, users.allUser);
@@ -59,8 +57,8 @@ export class DashboardComponent {
   }
 
   handel(allOrders: any, allUsers: any) {
-    this.lineChartData = []
-    this.lineChartLabels =[]
+    this.lineChartData = [];
+    this.lineChartLabels = [];
     if (this.Duration == 'today') {
       this.lastDay(allOrders, allUsers);
     } else if (this.Duration == 'LastWeek') {
@@ -140,16 +138,16 @@ export class DashboardComponent {
 
   lastWeek(allOrders: any, allUsers: any) {
     const today = new Date();
-    const Week:any = new Date(
+    const Week: any = new Date(
       today.getFullYear(),
       today.getMonth(),
       today.getDate() - 6
     );
     this.allUser = allUsers?.filter(
-      (item: any) => new Date(item.createdAt) >=  new Date(Week)
+      (item: any) => new Date(item.createdAt) >= new Date(Week)
     );
     this.allOrders = allOrders?.filter(
-      (item: any) => new Date(item.createdAt) >=  new Date(Week)
+      (item: any) => new Date(item.createdAt) >= new Date(Week)
     );
     this.setData();
     let labels = [];
@@ -189,10 +187,12 @@ export class DashboardComponent {
 
   lastMonth(allOrders: any, allUsers: any) {
     this.allUser = allUsers?.filter(
-      (item: any) => new Date(item.createdAt).getMonth()+1==  new Date().getMonth()+1
+      (item: any) =>
+        new Date(item.createdAt).getMonth() + 1 == new Date().getMonth() + 1
     );
     this.allOrders = allOrders?.filter(
-      (item: any) => new Date(item.createdAt).getMonth()+1==  new Date().getMonth()+1
+      (item: any) =>
+        new Date(item.createdAt).getMonth() + 1 == new Date().getMonth() + 1
     );
     const today = new Date();
     let dayNow = new Date().getDate();
@@ -240,17 +240,19 @@ export class DashboardComponent {
         backgroundColor: this.getRandomColor(),
       });
     }
+    this.setData();
   }
 
   lastYear(allOrders: any, allUsers: any) {
-    console.log( new Date().getFullYear());
+    console.log(new Date().getFullYear());
 
     this.allUser = allUsers?.filter(
-      (item: any) => new Date(item.createdAt).getFullYear()==  new Date().getFullYear()
+      (item: any) =>
+        new Date(item.createdAt).getFullYear() == new Date().getFullYear()
     );
     this.allOrders = allOrders?.filter(
-      (item: any) => new Date(item.createdAt).getFullYear()==  new Date().getFullYear()
-
+      (item: any) =>
+        new Date(item.createdAt).getFullYear() == new Date().getFullYear()
     );
 
     let month = new Date().getUTCMonth() + 1;
@@ -296,36 +298,48 @@ export class DashboardComponent {
         backgroundColor: this.getRandomColor(),
       });
     }
+    this.setData();
   }
 
   setData() {
     this.Earning = 0;
+    console.log(this.allOrders);
+
     this.Project = this.allOrders?.filter((item: any) => item.status == 'Done');
     for (let i = 0; i < this.allOrders?.length; i++) {
       const element = this.allOrders[i];
       if (element.status != 'Canceled') {
-        this.Earning += element.service.servicesPrice;
+        // console.log(element.service);
+
+        this.Earning += element.service?.servicesPrice;
       }
     }
     for (let i = 0; i < this.allUser?.length; i++) {
       const element = this.allUser[i];
     }
-    this.allClients = this.allUser?.filter(
-      (item: any) => item.orders.length != 0
-    );
+    const result = this.allOrders.reduce((accumulator: any, current: any) => {
+      let exists = accumulator.find((item: any) => {
+        return item._id === current._id;
+      });
+      if (!exists) {
+        accumulator = accumulator.concat(current);
+      }
+      return accumulator;
+    }, []);
+    this.allClients = result;
   }
-  updateStatus(status:any,id:any){
+  updateStatus(status: any, id: any) {
     let data = {
       id,
-      status
-    }
+      status,
+    };
     console.log(data);
 
-    this.ReqsService.updateOrderStatus(data).subscribe((data:any)=>{
+    this.ReqsService.updateOrderStatus(data).subscribe((data: any) => {
       console.log(data);
-if (data.message == 'Done') {
-this.SharedService.updateOrders()
-}
-    })
+      if (data.message == 'Done') {
+        this.SharedService.updateOrders();
+      }
+    });
   }
 }

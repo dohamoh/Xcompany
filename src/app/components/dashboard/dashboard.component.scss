@@ -57,7 +57,6 @@ section {
 
     .recentOrders {
       position: relative;
-
       height: 500px;
       padding: 20px;
       background: white;
@@ -99,7 +98,6 @@ section {
         }
       }
     }
-
     .recentCustomers {
       position: relative;
       height: 500px;
@@ -216,4 +214,19 @@ section {
       display: none;
     }
   }
+}
+.scrollTable {
+  overflow-x: scroll !important;
+  overflow-y: scroll !important;
+}
+.scrollTable::-webkit-scrollbar {
+  width: 5px !important;
+  height: 5px !important;
+}
+.scrollTable::-webkit-scrollbar-track {
+  background-color: #b09928;
+}
+
+.scrollTable::-webkit-scrollbar-thumb {
+  background-color: #fcd51a;
 }
