@@ -1,6 +1,7 @@
 import { SharedService } from 'src/app/services/shared.service';
 import { Component, ViewChild, OnInit } from '@angular/core';
 import * as AOS from 'aos';
+import { ReqsService } from 'src/app/services/reqs.service';
 AOS.init({
   // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
   offset: 120, // offset (in px) from the original trigger point
@@ -22,11 +23,13 @@ export class OurClientsComponent implements OnInit {
   user: any = '';
   dataArr: any;
   openNum: any;
+  role:any;
 
-  constructor(private SharedService: SharedService) {}
+  constructor(private SharedService: SharedService , private ReqsService:ReqsService) {}
   ngOnInit(): void {
     this.SharedService.currentClients.subscribe((data: any) => {
       this.dataArr = data;
+      this.role = localStorage.getItem('role')
     });
   }
   disClient(i: any) {
@@ -44,5 +47,12 @@ export class OurClientsComponent implements OnInit {
       this.openNum = '';
     }, 1);
 
+  }
+  deleteClient(id: any) {
+    this.ReqsService.deleteClient(id).subscribe((data: any) => {
+      if (data.message == 'deleted') {
+        this.SharedService.updateClients();
+      }
+    });
   }
 }

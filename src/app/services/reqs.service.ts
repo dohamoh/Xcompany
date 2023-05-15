@@ -51,6 +51,9 @@ export class ReqsService {
   addClient(data: any): any {
     return this.HttpClient.post(`${this.baseUrl}/client/addClient`, data);
   }
+  deleteClient(id:any): any {
+    return this.HttpClient.delete(`${this.baseUrl}/client/deleteClient/${id}`)
+  }
   getAllClients(): any {
     return this.HttpClient.get(`${this.baseUrl}/client/getAllClients`);
   }

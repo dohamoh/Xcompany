@@ -16,10 +16,10 @@ export class OurServicesComponent {
   price: any;
   id: any;
   file: any;
-  role:any
+  role: any
   loading: Boolean = false;
   editLoading: Boolean = false;
-  display:any
+  display: any
   constructor(
     private SharedService: SharedService,
     private ReqsService: ReqsService
@@ -27,7 +27,7 @@ export class OurServicesComponent {
   ngOnInit(): void {
     this.SharedService.currentServices.subscribe((data: any) => {
       this.allServices = data;
-this.role = localStorage.getItem('role')
+      this.role = localStorage.getItem('role')
 
       setTimeout(() => {
         this.reveal();
@@ -101,7 +101,7 @@ this.role = localStorage.getItem('role')
       }
     });
   }
-  showMore(data: any,i:any) {
+  showMore(data: any, i: any) {
     const Brief = document.querySelector(`#Brief${i}`) as HTMLElement | any;
     const Desc = document.querySelector(`#Desc${i}`) as HTMLElement | any;
     if (data.target.innerHTML == 'Show more') {
@@ -112,8 +112,8 @@ this.role = localStorage.getItem('role')
       Desc?.classList?.add('close');
     }
   }
-addToCart(id:any){
-  this.ReqsService.addToCart(id).subscribe((data:any)=>{
+  addToCart(id: any) {
+    this.ReqsService.addToCart(id).subscribe((data: any) => {
       if (data.message == 'added') {
         this.SharedService.updateUserData()
       }

@@ -38,16 +38,16 @@ export class SharedService {
 
   updateUserData() {
     console.log(localStorage.getItem('userToken'));
-if (localStorage.getItem('userToken') == null) {
-  localStorage.removeItem('role');
+    if (localStorage.getItem('userToken') == null) {
+      localStorage.removeItem('role');
 
-}
+    }
     if (localStorage.getItem('userToken')) {
       this.ReqsService.getUserRole(localStorage.getItem('userToken')).subscribe(
         (data: any) => {
           if (data.user) {
 
-console.log(data);
+            console.log(data);
 
             localStorage.setItem('role', data.user.role);
             this.userData.next(data.user);
@@ -67,18 +67,6 @@ console.log(data);
       );
     }
   }
-  // payment() {
-  //   if (localStorage.getItem('userToken')) {
-  //     this.ReqsService.processPayment(localStorage.getItem('userToken')).subscribe(
-  //       (data: any) => {
-  //         if (data.user) {
-  //           localStorage.setItem('role', data.user.role);
-  //           this.userData.next(data.user);
-  //         }
-  //       }
-  //     )
-  //   }
-  // }
   isLoggedInFun() {
     if (localStorage.getItem('userToken')) {
       this.LoggedIn.next(true);

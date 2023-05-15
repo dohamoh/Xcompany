@@ -2,11 +2,19 @@
   <div class="container">
     <div (click)="displayClient = item" *ngFor="let item of dataArr let i = index">
       <div class="row cursor-pointer">
+
         <div class="col-12  d-flex  mt-5"
           [ngClass]="i%2 ==0?'justify-content-end':'justify-content-start'" data-aos="fade-down">
+
           <div class=" col-lg-6 col-md-8 col-12 row">
             <div class="col-12 text-capitalize" [ngClass]="i%2 ==0?'text-end':'text-start'">
               <h3 class="fw-semibold fs-2">{{item.clientName}}</h3>
+
+            </div>
+            <div class="col-10 d-flex m-0 mt-2 p-0 desc py-3" [ngClass]="i%2 ==0?'justify-content-start':'justify-content-end'">
+              <button *ngIf="role != 'User' && role != null"
+                class=" btn rounded-3 btn-danger ani col-lg-1 col-2 text-white d-flex align-items-center justify-content-center "
+                (click)="deleteClient(item._id)"><i class="bi bi-trash-fill"></i></button>
             </div>
             <div class="col-12 my-2 row">
               <div class="col-12 logo" style="background-image: url({{item.image}});">
@@ -14,6 +22,7 @@
               <p class=" text-primary text-decoration-underline cursor-pointer" (click)="openNum = i" (click)="disClient(i)">Show more</p>
               <div class="col-12"></div>
             </div>
+
           </div>
 
         </div>
@@ -26,10 +35,3 @@
     </div>
   </div>
 </section>
-<!-- <div class=" top-0 w-100 vh-100 bg-black bg-opacity-75 position-fixed d-flex align-items-center justify-content-center "
-  *ngIf="displayClient != '' ">
-  <div class=""> -->
-    <!-- <app-client-details [clientData]="displayClient" (closeClientDetails)="displayClient = ''"></app-client-details> -->
-    <!-- <app-hall-details [hallData]="disPlayHall" (closeHallDetails)="disPlayHall=''"></app-hall-details> -->
-  <!-- </div>
-</div> -->
