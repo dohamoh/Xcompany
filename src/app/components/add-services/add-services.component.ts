@@ -8,9 +8,13 @@ import { ReqsService } from 'src/app/services/reqs.service';
   styleUrls: ['./add-services.component.scss'],
 })
 export class AddServicesComponent {
-  constructor(private ReqsService: ReqsService,private SharedService :SharedService) {}
+  constructor(
+    private ReqsService: ReqsService,
+    private SharedService: SharedService
+  ) {}
   file: any;
   loading: Boolean = false;
+  patternErr: any = '';
   pointesNum: any;
   servicesForm: FormGroup = new FormGroup({
     servicesName: new FormControl(null, [
@@ -53,7 +57,7 @@ export class AddServicesComponent {
       data.append('pointesNum', this.pointesNum);
       this.ReqsService.addServices(data).subscribe((data: any) => {
         if (data.message == 'added successfully') {
-          this.SharedService.updateServices()
+          this.SharedService.updateServices();
           this.loading = !this.loading;
           this.servicesForm.reset();
           this.pointesForm.reset();
@@ -83,5 +87,18 @@ export class AddServicesComponent {
         new FormControl(null, [Validators.required, Validators.minLength(3)])
       );
     }
+  }
+  prevent() {
+    console.log(this.servicesForm.controls['servicesName'].value);
+    let name = this.servicesForm.controls['servicesName'].value;
+    for (let i = 0; i < name.length; i++) {
+      const element = name[i];
+      console.log(element);
+      if (element == ',') {
+        this.patternErr = 'you cant use (,) in services name';
+        return
+      }
+    }
+    this.patternErr = ''
   }
 }
