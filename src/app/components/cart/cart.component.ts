@@ -98,7 +98,7 @@ export class CartComponent {
       })
     }
     paymentHandler.open({
-      name: 'velocity services',
+      name: 'X company services',
       description: 'buying a service',
       amount: amount * 100
     });

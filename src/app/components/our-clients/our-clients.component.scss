@@ -7,8 +7,10 @@ section {
   height: 20rem;
 }
 .details{
-  height: auto !important;
+  height: 50vh !important;
   transition: 1s !important;
+  overflow: hidden;
+
 }
 .close{
   transition: 1s !important;

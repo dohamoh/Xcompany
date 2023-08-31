@@ -15,6 +15,8 @@ export class NavBarComponent implements OnInit {
   role:Boolean=false
   constructor(private SharedService: SharedService, private router: Router) { }
   ngOnInit(): void {
+    console.log(localStorage.getItem('role'));
+
     if (localStorage.getItem('role')) {
 this.role = true
     }

@@ -1,7 +1,8 @@
 import { SharedService } from 'src/app/services/shared.service';
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, HostListener } from '@angular/core';
 import * as AOS from 'aos';
 import { ReqsService } from 'src/app/services/reqs.service';
+import * as path from 'path';
 AOS.init({
   // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
   offset: 120, // offset (in px) from the original trigger point
@@ -23,13 +24,21 @@ export class OurClientsComponent implements OnInit {
   user: any = '';
   dataArr: any;
   openNum: any;
-  role:any;
+  role: any;
 
-  constructor(private SharedService: SharedService , private ReqsService:ReqsService) {}
+
+  constructor(
+    private SharedService: SharedService,
+    private ReqsService: ReqsService
+  ) {}
   ngOnInit(): void {
+    this.math()
+
+
+
     this.SharedService.currentClients.subscribe((data: any) => {
       this.dataArr = data;
-      this.role = localStorage.getItem('role')
+      this.role = localStorage.getItem('role');
     });
   }
   disClient(i: any) {
@@ -40,13 +49,12 @@ export class OurClientsComponent implements OnInit {
       for (let i = 0; i < div.classList.length; i++) {
         const element = div.classList[i];
         if (element == 'close') {
-        return div.classList.replace('close', 'details');
+          return div.classList.replace('close', 'details');
         }
       }
       div.classList.replace('details', 'close');
       this.openNum = '';
     }, 1);
-
   }
   deleteClient(id: any) {
     this.ReqsService.deleteClient(id).subscribe((data: any) => {
@@ -54,5 +62,11 @@ export class OurClientsComponent implements OnInit {
         this.SharedService.updateClients();
       }
     });
+  }
+  math(){
+    var discount = (5.66454).toFixed(0);
+    let sum = 456.564498
+    console.log(discount);
+
   }
 }

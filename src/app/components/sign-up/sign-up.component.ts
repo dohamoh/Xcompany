@@ -29,6 +29,8 @@ export class SignUpComponent {
         }
       },
       (err: HttpErrorResponse) => {
+        console.log(err);
+
         if (err.error.message == "this email already register") {
           this.emailErr = "this email already register";
         }

@@ -1,10 +1,10 @@
-<section class="bg-light container py-3 my-3 h-auto">
-  <div class="row col-12 h-100" *ngFor="let item of clientData.clientServices let i = index">
-    <!-- <div class="line" [style.transform]="lineTransform"></div> -->
-    <div class="col-12 justify-content-center d-flex mt-3">
+<section class="bg-light container py-3 my-3 h-auto d-flex row align-items-center justify-content-center">
+  <div class="row col-4 h-100" *ngFor="let item of clientData.clientServices let i = index">
+
+    <div class="col-12 d-flex align-items-center justify-content-center d-flex mt-3">
       <h2 class="fw-semibold">{{item.name}}</h2>
     </div>
-    <div *ngFor="let img of item.imagesUrls" class="col-lg-4 p-3 mx-auto col-md-6 col-12 d-flex justify-content-center align-items-center my-4">
+    <div *ngFor="let img of item.imagesUrls" class=" p-3 mx-auto col-md-6 col-12 d-flex justify-content-center align-items-center my-4">
       <img class="w-100" src="{{img}}" alt="">
     </div>
   </div>
