@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ReqsService {
   // private baseUrl = 'http://localhost:3000';
-  private baseUrl = 'https://xcompany-api.vercel.app';
+  private baseUrl = 'https://xcompany-be.vercel.app';
   header={
     authorization: `Bearer__${localStorage.getItem('userToken')}`,
   }
