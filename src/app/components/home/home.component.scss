@@ -1,6 +1,13 @@
 section {
   header {
     overflow: hidden !important;
+    .mainImg{
+      background-image: url(../../../assets/images/header/beautiful-young-woman-home-office-working-from-home-teleworking-concept_144627-46786.avif);
+      height: 100vh;
+      width: 670rem;
+      background-size: cover;
+      background-position: center;
+    }
     .custom-shape {
       clip-path: url(#custom);
       z-index: 3;
